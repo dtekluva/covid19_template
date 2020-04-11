@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>(NCOVID-19) DataNigeria</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="../assets/img/icon.ico" type="image/x-icon"/>
+	<link rel="icon" href="../assets/img/icon.ico" type="image/x-icon" />
 
 	<!-- Fonts and icons -->
 	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
-			google: {"families":["Lato:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.min.css']},
-			active: function() {
+			google: { "families": ["Lato:300,400,700,900"] },
+			custom: { "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.min.css'] },
+			active: function () {
 				sessionStorage.fonts = true;
 			}
 		});
@@ -25,86 +26,88 @@
 	<style>
 		/* The container */
 		.container {
-		  display: block;
-		  position: relative;
-		  padding-left: 35px;
-		  margin-bottom: 12px;
-		  cursor: pointer;
-		  font-size: 10px;
-		  -webkit-user-select: none;
-		  -moz-user-select: none;
-		  -ms-user-select: none;
-		  user-select: none;
+			display: block;
+			position: relative;
+			padding-left: 35px;
+			margin-bottom: 12px;
+			cursor: pointer;
+			font-size: 10px;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
 		}
-		
+
 		/* Hide the browser's default checkbox */
 		.container input {
-		  position: absolute;
-		  opacity: 0;
-		  cursor: pointer;
-		  height: 0;
-		  width: 0;
+			position: absolute;
+			opacity: 0;
+			cursor: pointer;
+			height: 0;
+			width: 0;
 		}
-		
+
 		/* Create a custom checkbox */
 		.checkmark {
-		  position: absolute;
-		  top: 0;
-		  left: 0;
-		  height: 25px;
-		  width: 25px;
-		  background-color: #eee;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 25px;
+			width: 25px;
+			background-color: #eee;
 		}
-		
+
 		/* On mouse-over, add a grey background color */
-		.container:hover input ~ .checkmark {
-		  background-color: #ccc;
+		.container:hover input~.checkmark {
+			background-color: #ccc;
 		}
-		
+
 		/* When the checkbox is checked, add a blue background */
-		.container input:checked ~ .checkmark {
-		  background-color: #2196F3;
+		.container input:checked~.checkmark {
+			background-color: #2196F3;
 		}
-		
+
 		/* Create the checkmark/indicator (hidden when not checked) */
 		.checkmark:after {
-		  content: "";
-		  position: absolute;
-		  display: none;
+			content: "";
+			position: absolute;
+			display: none;
 		}
-		
+
 		/* Show the checkmark when checked */
-		.container input:checked ~ .checkmark:after {
-		  display: block;
+		.container input:checked~.checkmark:after {
+			display: block;
 		}
-		
+
 		/* Style the checkmark/indicator */
 		.container .checkmark:after {
-		  left: 9px;
-		  top: 5px;
-		  width: 5px;
-		  height: 10px;
-		  border: solid white;
-		  border-width: 0 3px 3px 0;
-		  -webkit-transform: rotate(45deg);
-		  -ms-transform: rotate(45deg);
-		  transform: rotate(45deg);
+			left: 9px;
+			top: 5px;
+			width: 5px;
+			height: 10px;
+			border: solid white;
+			border-width: 0 3px 3px 0;
+			-webkit-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
 		}
-		</style>
+	</style>
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="../assets/css/demo.css">
 </head>
+
 <body>
 	<div class="wrapper">
 		<div class="main-header">
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="blue">
-				
+
 				<a href="index.html" class="logo">
 					<img src="../assets/img/datang1.svg" alt="navbar brand" class="navbar-brand">
 				</a>
-				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse"
+					data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
 						<i class="icon-menu"></i>
 					</span>
@@ -120,7 +123,7 @@
 
 			<!-- Navbar Header -->
 			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
-				
+
 				<div class="container-fluid">
 					<div class="collapse" id="search-nav">
 						<form class="navbar-left navbar-form nav-search mr-md-3">
@@ -136,18 +139,21 @@
 					</div>
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 						<li class="nav-item toggle-nav-search hidden-caret">
-							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
+							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button"
+								aria-expanded="false" aria-controls="search-nav">
 								<i class="fa fa-search"></i>
 							</a>
 						</li>
-						<li class="nav-item dropdown hidden-caret">
-							<a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<!-- <li class="nav-item dropdown hidden-caret">
+							<a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="fa fa-envelope"></i>
 							</a>
-							<ul class="dropdown-menu messages-notif-box animated fadeIn" aria-labelledby="messageDropdown">
+							<ul class="dropdown-menu messages-notif-box animated fadeIn"
+								aria-labelledby="messageDropdown">
 								<li>
 									<div class="dropdown-title d-flex justify-content-between align-items-center">
-										Messages 									
+										Messages
 										<a href="#" class="small">Mark all as read</a>
 									</div>
 								</li>
@@ -155,7 +161,7 @@
 									<div class="message-notif-scroll scrollbar-outer">
 										<div class="notif-center">
 											<a href="#">
-												<div class="notif-img"> 
+												<div class="notif-img">
 													<img src="../assets/img/jm_denis.jpg" alt="Img Profile">
 												</div>
 												<div class="notif-content">
@@ -163,11 +169,11 @@
 													<span class="block">
 														How are you ?
 													</span>
-													<span class="time">5 minutes ago</span> 
+													<span class="time">5 minutes ago</span>
 												</div>
 											</a>
 											<a href="#">
-												<div class="notif-img"> 
+												<div class="notif-img">
 													<img src="../assets/img/chadengle.jpg" alt="Img Profile">
 												</div>
 												<div class="notif-content">
@@ -175,11 +181,11 @@
 													<span class="block">
 														Ok, Thanks !
 													</span>
-													<span class="time">12 minutes ago</span> 
+													<span class="time">12 minutes ago</span>
 												</div>
 											</a>
 											<a href="#">
-												<div class="notif-img"> 
+												<div class="notif-img">
 													<img src="../assets/img/mlane.jpg" alt="Img Profile">
 												</div>
 												<div class="notif-content">
@@ -187,11 +193,11 @@
 													<span class="block">
 														Ready for the meeting today...
 													</span>
-													<span class="time">12 minutes ago</span> 
+													<span class="time">12 minutes ago</span>
 												</div>
 											</a>
 											<a href="#">
-												<div class="notif-img"> 
+												<div class="notif-img">
 													<img src="../assets/img/talha.jpg" alt="Img Profile">
 												</div>
 												<div class="notif-content">
@@ -199,19 +205,21 @@
 													<span class="block">
 														Hi, Apa Kabar ?
 													</span>
-													<span class="time">17 minutes ago</span> 
+													<span class="time">17 minutes ago</span>
 												</div>
 											</a>
 										</div>
 									</div>
 								</li>
 								<li>
-									<a class="see-all" href="javascript:void(0);">See all messages<i class="fa fa-angle-right"></i> </a>
+									<a class="see-all" href="javascript:void(0);">See all messages<i
+											class="fa fa-angle-right"></i> </a>
 								</li>
 							</ul>
-						</li>
-						<li class="nav-item dropdown hidden-caret">
-							<a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						</li> -->
+						<!-- <li class="nav-item dropdown hidden-caret">
+							<a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="fa fa-bell"></i>
 								<span class="notification">4</span>
 							</a>
@@ -223,32 +231,34 @@
 									<div class="notif-scroll scrollbar-outer">
 										<div class="notif-center">
 											<a href="#">
-												<div class="notif-icon notif-primary"> <i class="fa fa-user-plus"></i> </div>
+												<div class="notif-icon notif-primary"> <i class="fa fa-user-plus"></i>
+												</div>
 												<div class="notif-content">
 													<span class="block">
 														New user registered
 													</span>
-													<span class="time">5 minutes ago</span> 
+													<span class="time">5 minutes ago</span>
 												</div>
 											</a>
 											<a href="#">
-												<div class="notif-icon notif-success"> <i class="fa fa-comment"></i> </div>
+												<div class="notif-icon notif-success"> <i class="fa fa-comment"></i>
+												</div>
 												<div class="notif-content">
 													<span class="block">
 														Rahmad commented on Admin
 													</span>
-													<span class="time">12 minutes ago</span> 
+													<span class="time">12 minutes ago</span>
 												</div>
 											</a>
 											<a href="#">
-												<div class="notif-img"> 
+												<div class="notif-img">
 													<img src="../assets/img/profile2.jpg" alt="Img Profile">
 												</div>
 												<div class="notif-content">
 													<span class="block">
 														Reza send messages to you
 													</span>
-													<span class="time">12 minutes ago</span> 
+													<span class="time">12 minutes ago</span>
 												</div>
 											</a>
 											<a href="#">
@@ -257,18 +267,19 @@
 													<span class="block">
 														Farrah liked Admin
 													</span>
-													<span class="time">17 minutes ago</span> 
+													<span class="time">17 minutes ago</span>
 												</div>
 											</a>
 										</div>
 									</div>
 								</li>
 								<li>
-									<a class="see-all" href="javascript:void(0);">See all notifications<i class="fa fa-angle-right"></i> </a>
+									<a class="see-all" href="javascript:void(0);">See all notifications<i
+											class="fa fa-angle-right"></i> </a>
 								</li>
 							</ul>
-						</li>
-						<li class="nav-item dropdown hidden-caret">
+						</li> -->
+						<!-- <li class="nav-item dropdown hidden-caret">
 							<a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
 								<i class="fas fa-layer-group"></i>
 							</a>
@@ -320,33 +331,36 @@
 									</div>
 								</div>
 							</div>
-						</li>
+						</li> -->
 						<li class="nav-item dropdown hidden-caret">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"
+								aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+									<img src="../assets/img/Database.ico" alt="..." class="avatar-img rounded-circle">
 								</div>
 							</a>
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
 								<div class="dropdown-user-scroll scrollbar-outer">
 									<li>
 										<div class="user-box">
-											<div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+											<div class="avatar-lg"><img src="../assets/img/Database.ico"
+													alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
-												<h4>Hizrian</h4>
-												<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+												<h4>Inyang Kpongette</h4>
+												<p class="text-muted">inyangete@gmail.com</p><a href="https://www.linkedin.com/in/kpongette-inyang/"
+													class="btn btn-xs btn-secondary btn-sm">View LinkedIn</a>
 											</div>
 										</div>
 									</li>
 									<li>
-										<div class="dropdown-divider"></div>
+										<!-- <div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="#">My Profile</a>
 										<a class="dropdown-item" href="#">My Balance</a>
 										<a class="dropdown-item" href="#">Inbox</a>
 										<div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="#">Account Setting</a>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">Logout</a>
+										<a class="dropdown-item" href="#">Logout</a> -->
 									</li>
 								</div>
 							</ul>
@@ -358,24 +372,24 @@
 		</div>
 
 		<!-- Sidebar -->
-		<div class="sidebar sidebar-style-2">			
+		<div class="sidebar sidebar-style-2">
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
-							<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+							<img src="../assets/img/Database.ico" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Hizrian
-									<span class="user-level">Administrator</span>
+									By. Insight Physics
+									<span class="user-level">08031346306</span>
 									<span class="caret"></span>
 								</span>
 							</a>
 							<div class="clearfix"></div>
 
-							<div class="collapse in" id="collapseExample">
+							<!-- <div class="collapse in" id="collapseExample">
 								<ul class="nav">
 									<li>
 										<a href="#profile">
@@ -393,32 +407,37 @@
 										</a>
 									</li>
 								</ul>
-							</div>
+							</div> -->
 						</div>
 					</div>
 					<ul class="nav nav-primary">
 						<li class="nav-item active">
 							<a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
 								<i class="fas fa-home"></i>
-								<p>Dashboard</p>
+								<p>Select Dashboard</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="dashboard">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="../demo1/index.html">
-											<span class="sub-item">Dashboard 1</span>
+										<a href="https://covid19.datanigeria.xyz">
+											<span class="sub-item">NCOVID-19 Dashboard</span>
 										</a>
 									</li>
 									<li>
-										<a href="../demo2/index.html">
-											<span class="sub-item">Dashboard 2</span>
+										<a href="https://datanigeria.xyz">
+											<span class="sub-item">ina Energy Dashboard</span>
+										</a>
+									</li>
+									<li>
+										<a href="https://insightphysics.co">
+											<span class="sub-item">InsightPhysics Home</span>
 										</a>
 									</li>
 								</ul>
 							</div>
 						</li>
-						<li class="nav-section">
+						<!-- <li class="nav-section">
 							<span class="sidebar-mini-icon">
 								<i class="fa fa-ellipsis-h"></i>
 							</span>
@@ -654,8 +673,10 @@
 							</div>
 						</li>
 						<li class="mx-4 mt-2">
-							<a href="http://themekita.com/atlantis-bootstrap-dashboard.html" class="btn btn-primary btn-block"><span class="btn-label mr-2"> <i class="fa fa-heart"></i> </span>Buy Pro</a> 
-						</li>
+							<a href="http://themekita.com/atlantis-bootstrap-dashboard.html"
+								class="btn btn-primary btn-block"><span class="btn-label mr-2"> <i
+										class="fa fa-heart"></i> </span>Buy Pro</a>
+						</li> -->
 					</ul>
 				</div>
 			</div>
@@ -669,7 +690,8 @@
 						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
 							<div>
 								<h2 class="text-white pb-2 fw-bold">NCOVID-19 PANDEMIC</h2>
-								<h5 class="text-white op-7 mb-2">Global NCOVID-19 Pandemic Penetration Dashboard (Monitoring Since January 2020)</h5>
+								<h5 class="text-white op-7 mb-2">Global NCOVID-19 Pandemic Penetration Dashboard
+									(Monitoring Since January 2020)</h5>
 							</div>
 							<div class="ml-md-auto py-2 py-md-0">
 								<div class="form-group">
@@ -696,15 +718,15 @@
 									<div class="d-flex flex-wrap justify-content-around pb-2 pt-4">
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-1"></div>
-											<h6 class="fw-bold mt-3 mb-0">Infection cases</h6>
+											<h6 class="fw-bold mt-3 mb-0">Cases (10 Today) </h6>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-2"></div>
-											<h6 class="fw-bold mt-3 mb-0">Deaths</h6>
+											<h6 class="fw-bold mt-3 mb-0">Deaths (10 Today)</h6>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-3"></div>
-											<h6 class="fw-bold mt-3 mb-0">Recoveries</h6>
+											<h6 class="fw-bold mt-3 mb-0">Recoveries (10 Today)</h6>
 										</div>
 									</div>
 								</div>
@@ -717,15 +739,18 @@
 									<div class="row py-3">
 										<div class="col-md-4 d-flex flex-column justify-content-around">
 											<div>
-												<h6 class="fw-bold text-uppercase text-warning op-8">Case increase rate</h6>
+												<h6 class="fw-bold text-uppercase text-warning op-8">Case increase rate
+												</h6>
 												<h3 class="fw-bold">9.782/week</h3>
 											</div>
 											<div>
-												<h6 class="fw-bold text-uppercase text-danger op-8">Case - Death rate</h6>
+												<h6 class="fw-bold text-uppercase text-danger op-8">Case - Death rate
+												</h6>
 												<h3 class="fw-bold">20%</h3>
 											</div>
 											<div>
-												<h6 class="fw-bold text-uppercase text-success op-8">Case - Recov rate</h6>
+												<h6 class="fw-bold text-uppercase text-success op-8">Case - Recov rate
+												</h6>
 												<h3 class="fw-bold">10%</h3>
 											</div>
 										</div>
@@ -750,22 +775,47 @@
 												<!-- <label class="form-label">Size</label> -->
 												<div class="selectgroup w-100">
 													<label class="selectgroup-item">
-														<input type="radio" name="value" value="50" class="selectgroup-input" ="">
+														<input type="radio" name="value" value="50"
+															class="selectgroup-input"="">
 														<span class="selectgroup-button">LINE</span>
 													</label>
 													<label class="selectgroup-item">
-														<input type="radio" name="value" value="100" class="selectgroup-input">
+														<input type="radio" name="value" value="100"
+															class="selectgroup-input">
 														<span class="selectgroup-button">BAR</span>
 													</label>
 													<label class="selectgroup-item">
-														<input type="radio" name="value" value="150" class="selectgroup-input">
+														<input type="radio" name="value" value="150"
+															class="selectgroup-input">
 														<span class="selectgroup-button">PIE</span>
 													</label>
 												</div>
 											</div>
 										</div>
+										<div class="card-tools">
+											<div class="form-group">
+												<!-- <label class="form-label">Size</label> -->
+												<div class="selectgroup w-100">
+													<label class="selectgroup-item">
+														<input type="radio" name="value" value="50"
+															class="selectgroup-input"="">
+														<span class="selectgroup-button">MONTHLY</span>
+													</label>
+													<label class="selectgroup-item">
+														<input type="radio" name="value" value="100"
+															class="selectgroup-input">
+														<span class="selectgroup-button">WEEKLY</span>
+													</label>
+													<label class="selectgroup-item">
+														<input type="radio" name="value" value="150"
+															class="selectgroup-input">
+														<span class="selectgroup-button">DAILY</span>
+													</label>
+												</div>
+											</div>
+										</div>
 									</div>
-									
+
 								</div>
 								<div class="card-body">
 									<div class="chart-container" style="min-height: 375px">
@@ -776,12 +826,11 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							
+
 							<div class="card">
 								<div style="
 											height: 572px;
-											overflow-x: overlay;" 
-									 class="card-body">
+											overflow-x: overlay;" class="card-body">
 									<div class="card-title">Click country checkbox to plot</div>
 									<table class="table table-striped mt-3">
 										<thead>
@@ -794,77 +843,77 @@
 										<tbody>
 											<tr>
 												<td colspan="2"><label class="container">
-													<input type="checkbox" checked="checked">
-													<span class="checkmark"></span>
-												  </label></td>
+														<input type="checkbox" checked="checked">
+														<span class="checkmark"></span>
+													</label></td>
 												<td colspan="1">Nigeria</td>
 												<td colspan="2">256</td>
 											</tr>
 											<tr>
 												<td colspan="1"><label class="container">
-													<input type="checkbox" checked="checked">
-													<span class="checkmark"></span>
-												  </label>></td>
+														<input type="checkbox" checked="checked">
+														<span class="checkmark"></span>
+													</label>></td>
 												<td colspan="2">Argentina</td>
 												<td colspan="2">1220</td>
 											</tr>
 											<tr>
 												<td colspan="1"><label class="container">
-													<input type="checkbox" checked="checked">
-													<span class="checkmark"></span>
-												  </label></td>
+														<input type="checkbox" checked="checked">
+														<span class="checkmark"></span>
+													</label></td>
 												<td colspan="2">South Africa</td>
 												<td colspan="2">890</td>
 											</tr>
 											<tr>
 												<td colspan="1"><label class="container">
-													<input type="checkbox" checked="checked">
-													<span class="checkmark"></span>
-												  </label></td>
+														<input type="checkbox" checked="checked">
+														<span class="checkmark"></span>
+													</label></td>
 												<td colspan="2">Seychelles</td>
 												<td colspan="2">890</td>
 											</tr>
 											<tr>
 												<td colspan="1"><label class="container">
-													<input type="checkbox" checked="checked">
-													<span class="checkmark"></span>
-												  </label></td>
+														<input type="checkbox" checked="checked">
+														<span class="checkmark"></span>
+													</label></td>
 												<td colspan="2">Egypt</td>
 												<td colspan="2">1100</td>
 											</tr>
 											<tr>
 												<td colspan="1"><label class="container">
-													<input type="checkbox" checked="checked">
-													<span class="checkmark"></span>
-												  </label></td>
+														<input type="checkbox" checked="checked">
+														<span class="checkmark"></span>
+													</label></td>
 												<td colspan="2">Congo</td>
 												<td colspan="2">10</td>
 											</tr>
 											<tr>
 												<td colspan="1"><label class="container">
-													<input type="checkbox" checked="checked">
-													<span class="checkmark"></span>
-												  </label></td>
+														<input type="checkbox" checked="checked">
+														<span class="checkmark"></span>
+													</label></td>
 												<td colspan="2">Brazil</td>
 												<td colspan="2">980</td>
 											</tr>
 											<tr>
 												<td colspan="2"><label class="container">
-													<input type="checkbox" checked="checked">
-													<span class="checkmark"></span>
-												  </label></td>
+														<input type="checkbox" checked="checked">
+														<span class="checkmark"></span>
+													</label></td>
 												<td colspan="2">Jamaica</td>
 												<td colspan="2">50</td>
 											</tr>
 											<tr>
 												<td colspan="2"><label class="container">
-													<input type="checkbox" checked="checked">
-													<span class="checkmark"></span>
-												  </label></td>
+														<input type="checkbox" checked="checked">
+														<span class="checkmark"></span>
+													</label></td>
 												<td colspan="2">Ireland</td>
 												<td colspan="2">580</td>
 											</tr>
-											
+
 										</tbody>
 									</table>
 								</div>
@@ -878,13 +927,17 @@
 									<div class="card-head-row card-tools-still-right">
 										<h4 class="card-title">Global Geolocation Distribution</h4>
 										<div class="card-tools">
-											<button class="btn btn-icon btn-link btn-primary btn-xs"><span class="fa fa-angle-down"></span></button>
-											<button class="btn btn-icon btn-link btn-primary btn-xs btn-refresh-card"><span class="fa fa-sync-alt"></span></button>
-											<button class="btn btn-icon btn-link btn-primary btn-xs"><span class="fa fa-times"></span></button>
+											<button class="btn btn-icon btn-link btn-primary btn-xs"><span
+													class="fa fa-angle-down"></span></button>
+											<button
+												class="btn btn-icon btn-link btn-primary btn-xs btn-refresh-card"><span
+													class="fa fa-sync-alt"></span></button>
+											<button class="btn btn-icon btn-link btn-primary btn-xs"><span
+													class="fa fa-times"></span></button>
 										</div>
 									</div>
 									<p class="card-category">
-									Map of the distribution of Infection around the world</p>
+										Map of the distribution of Infection around the world</p>
 								</div>
 								<div class="card-body">
 									<div class="row">
@@ -892,7 +945,8 @@
 											<div class="card">
 												<div class="card-body">
 													<div class="table-responsive">
-														<table id="list-datatables" class="display table table-striped table-hover" >
+														<table id="list-datatables"
+															class="display table table-striped table-hover">
 															<thead>
 																<tr>
 																	<th>Country</th>
@@ -994,7 +1048,7 @@
 																	<td>5</td>
 																	<td>61</td>
 																</tr>
-																
+
 															</tbody>
 														</table>
 													</div>
@@ -1018,13 +1072,17 @@
 									<div class="card-head-row card-tools-still-right">
 										<h4 class="card-title">Nigeria</h4>
 										<div class="card-tools">
-											<button class="btn btn-icon btn-link btn-primary btn-xs"><span class="fa fa-angle-down"></span></button>
-											<button class="btn btn-icon btn-link btn-primary btn-xs btn-refresh-card"><span class="fa fa-sync-alt"></span></button>
-											<button class="btn btn-icon btn-link btn-primary btn-xs"><span class="fa fa-times"></span></button>
+											<button class="btn btn-icon btn-link btn-primary btn-xs"><span
+													class="fa fa-angle-down"></span></button>
+											<button
+												class="btn btn-icon btn-link btn-primary btn-xs btn-refresh-card"><span
+													class="fa fa-sync-alt"></span></button>
+											<button class="btn btn-icon btn-link btn-primary btn-xs"><span
+													class="fa fa-times"></span></button>
 										</div>
 									</div>
 									<p class="card-category">
-									Map of the distribution of Infection around Nigeria</p>
+										Map of the distribution of Infection around Nigeria</p>
 								</div>
 								<div class="card-body">
 									<div class="row">
@@ -1032,7 +1090,8 @@
 											<div class="card">
 												<div class="card-body">
 													<div class="table-responsive">
-														<table id="nigeria-datatables" class="display table table-striped table-hover" >
+														<table id="nigeria-datatables"
+															class="display table table-striped table-hover">
 															<thead>
 																<tr>
 																	<th>Country</th>
@@ -1134,7 +1193,7 @@
 																	<td>5</td>
 																	<td>61</td>
 																</tr>
-																
+
 															</tbody>
 														</table>
 													</div>
@@ -1144,16 +1203,25 @@
 										<div class="col-md-6">
 											<div class="mapcontainer">
 												<div style="height: 550px" id="" class="vmap">
-													
+
 													<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 800 600" style="enable-background:new 0 0 800 600;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:rgb(223, 223, 223);stroke:#252525;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;}
-</style>
-<g id="Nigeria">
-	<path data-capital = "birnin-kebbi" data-title = "kebbi"  id="kb" class="st0" d="M118.741,154.177l2.847-1.711l0.67-0.684l0.395-1.223l-0.275-1.121l-0.682-1.039l-1.3-1.399l-0.235-0.14
+													<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+													<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+														xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+														viewBox="0 0 800 600" style="enable-background:new 0 0 800 600;"
+														xml:space="preserve">
+														<style type="text/css">
+															.st0 {
+																fill: rgb(223, 223, 223);
+																stroke: #252525;
+																stroke-width: 0.5;
+																stroke-linecap: round;
+																stroke-linejoin: round;
+															}
+														</style>
+														<g id="Nigeria">
+															<path data-capital="birnin-kebbi" data-title="kebbi" id="kb"
+																class="st0" d="M118.741,154.177l2.847-1.711l0.67-0.684l0.395-1.223l-0.275-1.121l-0.682-1.039l-1.3-1.399l-0.235-0.14
 		l-0.189-0.19l-0.315-0.6l-0.178-0.556l-0.321-3.217l0.252-0.928l0.613-0.811l0.945-0.981l0.94-1.883l-0.258-1.939l-1.381-4.151
 		l0.029-2.461l1.495-7.45l-0.55-14.13l0.229-0.599l12.122-9.152l3.586-3.45l8.851-13.979l1.749-12.2l0.485-0.114l4.211-0.11
 		l3.598,0.59l1.919-0.937l2.011-0.427l1.701,1.342l1.678,1.655l3.437,2.031l3.77,1.419l2.005,0.49l1.931,0.703l1.839,1.29
@@ -1174,8 +1242,9 @@
 		l-0.223-2.139l0.349-4.191l2.091-3.598l6.451-3.654l0.08-1.021l1.392-1.422l0.43-0.758l0.103-0.979l-0.017-2.132l1.845-10.073
 		l-0.097-1.396l-3.563-1.089l-6.709-4.419l-5.62-1.51l-5.752,0.861l-15.164,0.401l-2.933-0.34l-6.204-2.863l-4.933-3.088
 		l-5.07-0.584l-0.395,0.401l-0.003,0.003l-0.065-0.003l-0.521,0.095l-0.458-0.077l-1.34-1.28l-9.934-14.082l-0.825-1.537
-		l-0.097-1.301l1.111-3.043l0.349-0.861l0.659-2.549l3.85-6.591L118.741,154.177z"/>
-	<path data-capital = "minna" data-title = "niger" id="ng" class="st0" d="M132.091,214.359l-0.008-1.366l-0.275-1.641l-0.51-1.09l-0.705-0.408l-0.785-0.149l-0.71-0.217l-0.521-0.625
+		l-0.097-1.301l1.111-3.043l0.349-0.861l0.659-2.549l3.85-6.591L118.741,154.177z" />
+															<path data-capital="minna" data-title="niger" id="ng"
+																class="st0" d="M132.091,214.359l-0.008-1.366l-0.275-1.641l-0.51-1.09l-0.705-0.408l-0.785-0.149l-0.71-0.217l-0.521-0.625
 		l-0.521-1.851l-0.275-0.605l-0.418-0.484l-0.487-0.411l-0.447-0.469l-0.281-0.674l0.069-0.977l1.203-2.972l0.063-1.663l-1.14-5.029
 		v-0.015l-0.567-0.964l-0.412-1.036l-0.223-1.128v-1.223l0.567-2.194l-0.464-0.45l-0.45-0.024l0.003-0.003l0.395-0.401l5.07,0.584
 		l4.933,3.088l6.204,2.863l2.933,0.34l15.164-0.401l5.752-0.861l5.62,1.51l6.709,4.419l3.563,1.089l0.097,1.396l-1.845,10.073
@@ -1213,8 +1282,9 @@
 		l0.556-4.514l-0.894-3.786l-1.896-0.02l-0.899-0.545l-0.831-0.654l-18.642-22.11l-1.553-1.318l-3.792-0.505l-8.863,0.265
 		l-4.864,0.889l-0.286,0.069l0.148-1.008l-0.16-0.88l-0.498-0.709l-3.77-3.909l-0.791-1.285l-0.051-1.054l1.14-2.549l1.398-2.163
 		l0.218-0.67l0.057-1.11l0.155-0.358l0.367-0.529l1.083-1.079l1.088-0.354l1.169,0.208l3.552,1.867l0.865-0.134l0.842-1.056
-		l0.367-1.043l0.057-2.91l0.498-1.503l1.415-2.815l0.418-1.512L132.091,214.359z"/>
-	<path data-capital = "ilorin" data-title = "kwara" id="kw" class="st0" d="M70.325,318.925l-0.005-0.061l0.017-0.596l0.315-0.423l0.934-0.43l0.298-0.296l0.069-0.497l-0.286-0.862
+		l0.367-1.043l0.057-2.91l0.498-1.503l1.415-2.815l0.418-1.512L132.091,214.359z" />
+															<path data-capital="ilorin" data-title="kwara" id="kw"
+																class="st0" d="M70.325,318.925l-0.005-0.061l0.017-0.596l0.315-0.423l0.934-0.43l0.298-0.296l0.069-0.497l-0.286-0.862
 		l-0.069-0.497l0.206-0.865l0.693-1.597l0.023-0.857l-0.212-0.391l-0.275-0.099l-0.235-0.123l-0.097-0.46l0.137-0.116l0.625-0.944
 		l0.178-0.341l0.304-1.537l0.12-3.557l-0.178-1.488l4.274,0.352l0.745-0.104l0.533-0.397l0.47-0.496l0.59-0.383l0.596-0.113
 		l1.701-0.055l0.602,0.073l0.607,0.29l0.538,0.37l0.556,0.27l0.647-0.006l3.787-0.988l1.364-0.951l0.848-1.755l1.845-5.76
@@ -1243,8 +1313,9 @@
 		l-2.515-1.153l-2.664,0.271l-2.492,1.821l-1.404,2.726l-0.533,3.662l-1.066,1.166l-1.289,0.925l-11.395,5.778l-2.406,1.805
 		l-2.229,1.102l-2.492,1.896l-6.531,2.972l-0.716,0.107l-0.584-0.655l-0.653-0.316l-0.453-0.625l-0.917-0.201l-0.876,0.107
 		l-1.272,0.393l-1.186,0.713l-2.28,2.001l-1.094,0.669l-0.877,0.711l-0.412,0.555l-1.283,0.506l-3.008,2.464l-1.043,1.262
-		l-1.323,0.888l-4.388,1.036l-1.071-0.103l-1.094,0.015l-2.853,2.507l-0.399,0.31L70.325,318.925z"/>
-	<path data-capital = "abeokuta" data-title = "ogun" id="og" class="st0" d="M70.031,381.241l0.53-7.539l-0.155-0.804l-0.493-0.804l-1.329-1.489l-0.624-1.605l-0.447-0.685l-0.029-0.215
+		l-1.323,0.888l-4.388,1.036l-1.071-0.103l-1.094,0.015l-2.853,2.507l-0.399,0.31L70.325,318.925z" />
+															<path data-capital="abeokuta" data-title="ogun" id="og"
+																class="st0" d="M70.031,381.241l0.53-7.539l-0.155-0.804l-0.493-0.804l-1.329-1.489l-0.624-1.605l-0.447-0.685l-0.029-0.215
 		l0.367-0.218l4.795-3.394l5.374,0.181l1.386,2.626l0.298,6.244l0.945,3.051l1.564,0.227l0.556-2.862l0.785-2.431l2.097-0.081
 		l0.35,4.937l-2.039,5.674l0.046,1.168l1.1,2.901l2.303,1.926l1.822,2.34l2.498,4.564l3.896,3.55l3.025,1.021l3.117-0.104
 		l2.206-1.922l2.257-5.543l2.292-1.557l2.039,1.525l0.945,2.73l1.627,0.927l1.598-0.911l1.679-0.715l5.54,0.14l1.885,2.734
@@ -1265,8 +1336,9 @@
 		l-0.424-0.567l-0.281-1.101l0.149-1.209l0.59-2.341l-0.275-2.34l-0.75-2.141l-0.183-2.026l1.438-2.009l0.647-0.309l0.71-0.211
 		l0.567-0.303l0.218-0.603l-0.321-0.528l-1.455-1.198l-0.476-0.6l-0.212-0.727l0.057-0.387l0.241-0.372l0.51-1.059l0.441-0.577
 		l0.183-0.528l0.057-0.774l-1.163-13.746l0.137-0.618l0.424-0.246l0.579,0.006l1.197,0.24l0.178-0.113l0.04-0.315l0.132-0.5
-		l0.149-2.337l-1.226-2.048l-1.639-1.962l-1.111-2.081l-0.292-2.193L70.031,381.241z"/>
-	<path data-capital = "ibadan" data-title = "oyo" id="oy" class="st0" d="M67.484,368.101l-0.034-0.251l0.126-0.428l0.567-1.067l0.195-0.497l0.212-3.529l0.699-3.545l0.12-3.348
+		l0.149-2.337l-1.226-2.048l-1.639-1.962l-1.111-2.081l-0.292-2.193L70.031,381.241z" />
+															<path data-capital="ibadan" data-title="oyo" id="oy"
+																class="st0" d="M67.484,368.101l-0.034-0.251l0.126-0.428l0.567-1.067l0.195-0.497l0.212-3.529l0.699-3.545l0.12-3.348
 		l0.149-1.024l0.43-0.948l0.579-0.935l0.435-1.029l0.029-1.229l-0.378-1.192l-1.088-2.331l-0.43-1.236l-0.201-1.335l0.069-1.073
 		l0.424-2.32v-0.52l-0.137-1.035l0.011-0.497l0.292-0.701l1.106-1.252l0.441-0.66l0.435-1.893l-0.129-1.636l0.399-0.31l2.853-2.507
 		l1.094-0.015l1.071,0.103l4.388-1.036l1.323-0.888l1.043-1.262l3.008-2.464l1.283-0.506l0.412-0.555l0.877-0.711l1.094-0.669
@@ -1283,8 +1355,9 @@
 		l0.011-1.067l-0.355-0.969l-1.621-0.882l-1.61-1.18l-0.149-0.975l0.023-3.099l-1.885-2.734l-5.54-0.14l-1.679,0.715l-1.598,0.911
 		l-1.627-0.927l-0.945-2.73l-2.039-1.525l-2.292,1.557l-2.257,5.543l-2.206,1.922l-3.117,0.104l-3.025-1.021l-3.896-3.55
 		l-2.498-4.564l-1.822-2.34l-2.303-1.926l-1.1-2.901l-0.046-1.168L86,376.381l-0.35-4.937l-2.097,0.081l-0.785,2.431l-0.556,2.862
-		l-1.564-0.227l-0.945-3.051l-0.298-6.244l-1.386-2.626l-5.374-0.181l-4.795,3.394L67.484,368.101z"/>
-	<path data-capital = "ikeja" data-title = "lagos" id="lag" class="st0" d="M69.266,453.298l0.023-3.399l0.425-2.496l0.326,0.033l1.85,0.156l1.862-0.174l1.438,0.458l1.398-0.076
+		l-1.564-0.227l-0.945-3.051l-0.298-6.244l-1.386-2.626l-5.374-0.181l-4.795,3.394L67.484,368.101z" />
+															<path data-capital="ikeja" data-title="lagos" id="lag"
+																class="st0" d="M69.266,453.298l0.023-3.399l0.425-2.496l0.326,0.033l1.85,0.156l1.862-0.174l1.438,0.458l1.398-0.076
 		l1.472-0.986l1.06-1.222l-0.017-0.781l0.596-0.29l12.088,0.532l3.254-0.461l0.819-0.928l0.59-2.705l0.819-1.156l0.859-0.934
 		l0.796-2.862l0.355-0.796l1.742-0.678l1.3,0.397l2.515,1.321l1.295,1.632l1.971,0.087l1.094-0.176l0.653-0.957l0.178-0.795
 		l0.487-0.509l32.38-0.174l3.306,0.87l-0.596,1.468l-1.352,1.047l-0.475,1.4l0.573,1.357l0.046,0.704l1.575,1.282l1.679-0.841
@@ -1298,8 +1371,9 @@
 		l-0.704-0.25l-0.677,0.036l-0.356-0.281l-0.171-0.175l-0.23-0.722l-0.059-0.683l0.383-1.196l0.054-0.788l-0.952,0.556l-0.672,0.584
 		l-1.218,1.337l-0.447,0.17l-0.586,0.023l-0.496,0.123l-0.207,0.463l0.081,0.393l0.307,0.82l0.023,0.518l-0.221,0.595l-0.78,1.199
 		l-0.167,0.67l-0.212,0.395l-0.401,0.306l-0.226,0.34l0.289,0.497l0.271,0.293l0.149,0.286l0.086,0.331l0.298,0.268l-0.275,1.244
-		l-3.234,0.35l-6.207-0.295l-7.308,0.849l-8.571-0.424L69.266,453.298z"/>
-	<path data-capital = "maiduguri" data-title = "borno" id="bor" class="st0" d="M673.649,40.056l12.682,17.849l12.682,17.826l3.117,15.14l3.116,15.124l0.075,4.386l0.084,0.273l0.288,0.936
+		l-3.234,0.35l-6.207-0.295l-7.308,0.849l-8.571-0.424L69.266,453.298z" />
+															<path data-capital="maiduguri" data-title="borno" id="bor"
+																class="st0" d="M673.649,40.056l12.682,17.849l12.682,17.826l3.117,15.14l3.116,15.124l0.075,4.386l0.084,0.273l0.288,0.936
 		l-0.017,1.088l-0.332,1.736l0.04,0.663l0.504,0.862l0.733,0.449l0.854,0.182l11.395,0.349l3.546,0.871l1.512,0.809l0.178,0.578
 		l-0.286,0.836l0.109,0.525l0.395,0.399l1.644,1.243l0.607,0.261v0.422l-0.212,0.085l-0.544,0.302l1.088,0.785l1.117,0.598
 		l0.876,0.73l0.361,1.178l0.315,0.261l0.722-0.258l0.768-0.404l0.464-0.179l0.659,0.352l0.269,0.539l0.092,0.604l-1.071,1.096
@@ -1328,8 +1402,9 @@
 		l1.53-0.128v0.355l-0.304,0.554l0.624,0.233l1.043-0.055l0.911-0.308l0.017,0.2l-0.017,0.614l0.413-0.408l0.412-0.953l0.309-0.233
 		l0.538,0.106l0.12,0.455l-0.12,0.575l-0.195,0.458l1.484-0.673l1.495-0.28l1.341-0.493l1.014-1.314l-0.785-0.103l-0.115-0.277
 		l0.516-0.788l0.241-0.096l0.39,0.028l0.355-0.084l0.155-0.451l-0.08-0.323l-0.281-0.404l0.017-0.23l0.298-0.573l0.384-0.517
-		l2.211-2.089l0.842-0.597l-0.029-0.98l0.51-0.407l1.608-0.274l0.059-0.01L673.649,40.056z"/>
-	<path data-capital = "jalingo" data-title = "taraba" id="tr" class="st0" d="M681.549,196.763l-0.301,0.674l-9.874,14.191l-1.524,3.248l-2.08,7.053l-1.891,10.637l-1.237,3.499
+		l2.211-2.089l0.842-0.597l-0.029-0.98l0.51-0.407l1.608-0.274l0.059-0.01L673.649,40.056z" />
+															<path data-capital="yola" data-title="adamawa" id="adam"
+																class="st0" d="M681.549,196.763l-0.301,0.674l-9.874,14.191l-1.524,3.248l-2.08,7.053l-1.891,10.637l-1.237,3.499
 		l-0.017,0.732l0.378,1.147l0.092,0.653l-0.12,0.752l-0.882,1.9l-0.647,0.841l-1.18,0.906l-0.514,0.305l-0.792,0.47l-1.031,0.454
 		l-4.348,0.476l-1.85,0.714l-0.985,1.919l0.017,1.124l0.664,1.84l0.218,1.081l-0.229,1.335l-1.306,2.066l-0.424,1.141l0.092,1.272
 		l0.567,0.901l1.61,1.682l0.607,1.266l-0.138,0.901l-0.521,0.926l-0.539,1.346l-0.716,3.791l-0.275,3.642l-1.552,3.987l-3.609,1.444
@@ -1349,8 +1424,9 @@
 		l4.703-2.098l10.26-6.178l2.068-1.709l0.848-2.336l-0.292-7.422l0.579-4.901l8.943,0.489l7.058-4.971l5.706-7.487l3.191-2.688
 		l4.056-0.905l4.434-0.475l4.005-1.798l1.535-1.721l1.02-2.011l1.369-1.048l2.074-0.106l3.265-2.962l2.973-3.524l4.549-1.033
 		l4.784,0.664l3.764,1.627l3.088,2.728l3.225,2.11l3.775,0.843l2.801-1.57l1.971-7.516l3.059-7.587l0.739-3.91l-0.023-3.838
-		l0.487-3.234l1.885-0.261l0.762,0.158l0.624,0.489l1.77,0.671l1.845,0.252l8.055-1.796l3.191-0.197L681.549,196.763z"/>
-	<path data-capital = "makurdi" data-title = "benue" id="ben" class="st0" d="M579.208,392.704l-3.26,3.195l-3.437,5.135l-1.123,1.06l-0.991,0.748l-0.441,0.497l0.321,0.326l1.318,0.251
+		l0.487-3.234l1.885-0.261l0.762,0.158l0.624,0.489l1.77,0.671l1.845,0.252l8.055-1.796l3.191-0.197L681.549,196.763z" />
+															<path data-capital="jalingo" data-title="taraba" id="tar"
+																class="st0" d="M579.208,392.704l-3.26,3.195l-3.437,5.135l-1.123,1.06l-0.991,0.748l-0.441,0.497l0.321,0.326l1.318,0.251
 		l0.779,0.664l2.756,4.005l2.16,2.362l0.687,1.4l-0.504,1.267l-0.533,0.219l-0.47-0.133l-0.498-0.231l-0.619-0.058l-0.756,0.234
 		l-0.636,0.384l-2.355,2.145l-0.825,0.534l-0.16,0.502l-0.097,0.537l-0.321,0.439l-0.378,0.136l-0.865,0.035l-0.619,0.147
 		l-0.567-0.058l-0.263,0.069l-0.224,0.263l-0.201,0.73l-0.206,0.291l-3.208,2.029l-3.409,3.139l-1.003,1.417l-0.309,1.496
@@ -1374,8 +1450,9 @@
 		l1.931,3.265l3.495,1.7l2.314,2.867l0.338,3.886l-5.568,11.572l-0.418,3.883l0.286,2.05l-0.521,1.851l-3.718,3.056l-14.322,17.25
 		l-3.626,3.24l-3.042,3.582l-0.51,1.746l2.412,5.986l2.223,3.987l1.512,1.57l1.81,0.181l1.455-1.277l1.232-1.499l1.077-1.721
 		l1.77-0.797l1.959,0.892l1.375,1.674l5.385,5.106l2.67,6.426l-0.006,3.741l0.699,3.723l1.375,2.978l0.67,2.821l0.034,0.029
-		L579.208,392.704z"/>
-	<path data-capital = "calabar" data-title = "cross river" id="cr" class="st0" d="M454.006,444.77l-0.673,0.004l-1.644,0.333l-0.825,0.695l-1.295,2.462l-0.877,0.861l-1.129,0.566l-2.218,0.826
+		L579.208,392.704z" />
+															<path data-capital="makurdi" data-title="benue" id="ben"
+																class="st0" d="M454.006,444.77l-0.673,0.004l-1.644,0.333l-0.825,0.695l-1.295,2.462l-0.877,0.861l-1.129,0.566l-2.218,0.826
 		l-0.008-0.013l-1.089-1.786l-1.575-2.88l-6.623-7.823l-4.898-2.49l-8.748,1.651l-3.145,0.056l-1.495-0.327l-1.077-0.926
 		l0.533-3.344l-1.363-2.875l-6.657-3.918l-3.993-1.412l-3.798-0.336l-3.575,1.36l-0.722,1.799l0.521,2.11l-0.962,1.582l-1.833,0.995
 		l-2.372,0.614l-2.441,0.064l-2.211-0.355l-2.183-0.043l-1.633,1.229l-1.495,1.621l-1.673,0.916l-1.816,0.17l-1.272-1.445
@@ -1390,8 +1467,9 @@
 		l-1.277-4.023l0.899-3.94l3.082-2.629l7.304-0.832l11.189,3.754l4.033,0.871l6.084,0.205l2.028-0.155v-0.314l10.558,7.892
 		l-3.065,4.559l0.665,1.25l1.753-0.384l3.752-1.7l2.183-0.419l8.513-0.24l8.473,0.97l6.29,4.361l4.961,6.219l5.677,5.073
 		l2.458,6.491l-2.194,6.697l-0.372,6.571l-2.441,2.266l-2.79,2.006l-2.252,2.823l-1.667,3.231l-1.828,9.724l0.206,3.537
-		l-0.665,9.382l-1.295,5.313l-0.012,0.109L454.006,444.77z"/>
-	<path data-capital = "sokoto" data-title = "sokoto" id="sok" class="st0" d="M445.346,450.517l-0.332,0.124l-1.633,1.022l-1.679,3.253l-1.547,0.938l-0.876,0.052l-0.699-0.061
+		l-0.665,9.382l-1.295,5.313l-0.012,0.109L454.006,444.77z" />
+															<path data-capital="calabar" data-title="cross river"
+																id="cr" class="st0" d="M445.346,450.517l-0.332,0.124l-1.633,1.022l-1.679,3.253l-1.547,0.938l-0.876,0.052l-0.699-0.061
 		l-0.653,0.066l-0.762,0.419l-0.756,0.863l-1.581,3.35l-1.415,1.988l-7.602,6.147l-5.116,5.333v0.009l-1.186,1.721l-0.699,0.75
 		l-0.888,0.461l-0.298,0.379l-0.12,1.587l-0.201,0.727l-0.98,0.121l-1.209-0.436l-1.192-0.17l-0.945,0.911l-0.745,0.947
 		l-1.959,1.316l-0.59,0.917l0.103,1.13l0.596,0.884l0.487,0.972l-0.246,1.399l-0.974,1.196l-0.98,0.727l-0.424,0.8l0.728,1.409
@@ -1414,8 +1492,9 @@
 		l-0.195-1.754l-1.174-1.492l-0.556-1.532l-0.252-1.734l-0.962-1.058l-0.172-0.634l-0.418-0.535l-0.785-0.476l-0.716-0.591
 		l-2.114-2.427l-0.802-3.077l1.816-0.17l1.673-0.916l1.495-1.621l1.633-1.229l2.183,0.043l2.211,0.355l2.441-0.064l2.372-0.614
 		l1.833-0.995l0.962-1.582l-0.521-2.11l0.722-1.799l3.575-1.36l3.798,0.336l3.993,1.412l6.657,3.918l1.363,2.875l-0.533,3.344
-		l1.077,0.926l1.495,0.327l3.145-0.056l8.748-1.651l4.898,2.49l6.623,7.823l1.575,2.88l1.089,1.786L445.346,450.517z"/>
-	<path data-capital = "gusau" data-title = "zamfara" id="zam" class="st0" d="M267.727,42.135l0.996,0.218l3.701,2.143l7.78,7.425l9.049,9.965l4.508,8.33l-0.02,0.016l-2.767,2.199
+		l1.077,0.926l1.495,0.327l3.145-0.056l8.748-1.651l4.898,2.49l6.623,7.823l1.575,2.88l1.089,1.786L445.346,450.517z" />
+															<path data-capital="sokoto" data-title="sokoto" id="sok"
+																class="st0" d="M267.727,42.135l0.996,0.218l3.701,2.143l7.78,7.425l9.049,9.965l4.508,8.33l-0.02,0.016l-2.767,2.199
 		l-4.308,2.488l-5.397,0.002l-5.402-1.328l-0.928-0.875l-0.854-1.05l-0.985-0.359l-1.043-0.255l-1.197-0.157l-2.589,0.006
 		l-0.814,0.706l-0.263,1.428l-0.075,1.506l-0.619,2.345l-1.392,0.37l-2.16-0.856l-4.033,0.51l-3.5,1.988l-0.63,1.589l0.974,9.732
 		l-1.644,3.087l-1.988,0.893l-2.068,0.576l-12.483,1.211l-2.801,2.226l-2.068,3.345l-2.91,3.681l-2.618,1.79l-0.332,3.732
@@ -1429,8 +1508,9 @@
 		l1.547-0.77l8.719-8.388l2.595-1.856l3.002-1.193l6.602-1.625l11.031-2.715l1.776-0.192l1.272,0.575l1.249,1.2l1.26,0.565
 		l3.22,0.195l5.609-1.019l7.94,0.354l1.908-0.366l0.636-0.273l1.702-1.222l0.768-0.913l0.928-2.099l0.636-0.848l1.541-0.782
 		l8.187-1.43l1.805,0.392l15.689,6.26l15.689,6.257l0.504,0.286l0.349,0.308l0.367,0.162l0.579-0.156l3.203-1.808l1.065-0.224
-		L267.727,42.135z"/>
-	<path data-capital = "damaturu" data-title = "yobe" id="yb" class="st0" d="M293.761,70.216l1.375,2.54l3.283,3.801l2.011,1.877l1.799,1.345l1.69,0.651l1.85,0.203l4.125-0.021
+		L267.727,42.135z" />
+															<path data-capital="gusau" data-title="zamfara" id="zam"
+																class="st0" d="M293.761,70.216l1.375,2.54l3.283,3.801l2.011,1.877l1.799,1.345l1.69,0.651l1.85,0.203l4.125-0.021
 		l0.998-0.167l-0.92,5.961l1.753,23.401l1.186,2.887l-0.275,3.398l1.518,3.001l0.808,2.848l0.327,2.919l0.527,1.641l0.321,1.716
 		l-0.367,1.474l-1.209,3.297l-0.894,1.781l1.094,1.366l1.902,0.898l3.048,2.493l0.619,3.358l-1.65,0.626l-1.753-0.465l-1.003,0.979
 		l-0.286,1.847l-1.318,1.286l-2.349,1.844l-0.894,0.451l-0.315-0.13l-0.487-0.534l-0.338-0.113l-4.119,0.001l-3.214,1.508
@@ -1445,8 +1525,9 @@
 		l2.767-2.942l-0.218-4.437l-1.117-4.187l0.332-3.732l2.618-1.79l2.91-3.681l2.068-3.345l2.801-2.226l12.483-1.211l2.068-0.576
 		l1.988-0.893l1.644-3.087l-0.974-9.732l0.63-1.589l3.5-1.988l4.033-0.51l2.16,0.856l1.392-0.37l0.619-2.345l0.075-1.506
 		l0.263-1.428l0.814-0.706l2.589-0.006l1.197,0.157l1.043,0.255l0.985,0.359l0.854,1.05l0.928,0.875l5.402,1.328l5.397-0.002
-		l4.308-2.488l2.767-2.199L293.761,70.216z"/>
-	<path data-capital = "katsina" data-title = "katsina" id="kat" class="st0" d="M509.606,59.139l1.502-0.325l5.339-0.433l10.071,1.185l26.995-0.144l16.757,4.271l6.124,2.509l7.711,4.743
+		l4.308-2.488l2.767-2.199L293.761,70.216z" />
+															<path data-capital="damaturu" data-title="yobe" id="yb"
+																class="st0" d="M509.606,59.139l1.502-0.325l5.339-0.433l10.071,1.185l26.995-0.144l16.757,4.271l6.124,2.509l7.711,4.743
 		l2.555,2.034l1.089,0.546l3.26,0.793l1.839-0.156l0.785-0.135l1.163-0.804l0.922-0.19l2.796,0.991l0.63,0.35l0.212,0.381
 		l0.023,0.315l0.097,0.215l0.441,0.079l0.206-0.135l0.246-0.294l0.344-0.273l0.527-0.074l0.55,0.312l0.412,0.5l0.407,0.287
 		l0.527-0.322l0.905,0.266l1.949,0.069l-0.021,0.106l-1.3,10.891l0.997,3.601l2.446,2.766l2.99,2.223l0.476,3.488l-1.392,3.455
@@ -1460,8 +1541,9 @@
 		l-1.994-0.952l-1.822-0.148l-3.655,1.049l-2.395-0.366l-0.533-1.426l-1.449-5.684l-1.432-2.201l-2.315-0.707l-2.481,0.638
 		l-5.225,2.124l-2.698,0.717l-3.833,1.6l-1.008,0.748l-0.653,1.519l-0.842,1.419l-4.847,2.117l-5.259-1.743l-1.516-0.417
 		l9.516-11.299l1.856-1.777l1.065-0.689l0.59-0.209l0.281,0.041l0.223-0.041l0.441-0.46l0.258-0.57l0.212-1.391l0.235-0.593
-		l0.98-0.954l10.513-5.928l2.314-0.974L509.606,59.139z"/>
-	<path data-capital = "dutse" data-title = "jigawa" id="jig" class="st0" d="M310.891,80.446l0.32-0.054l1.186-0.586l2.624-2.324l3.369-3.992l1.237-0.238l5.781,1.066l1.988,0.012
+		l0.98-0.954l10.513-5.928l2.314-0.974L509.606,59.139z" />
+															<path data-capital="katsina" data-title="katsina" id="kat"
+																class="st0" d="M310.891,80.446l0.32-0.054l1.186-0.586l2.624-2.324l3.369-3.992l1.237-0.238l5.781,1.066l1.988,0.012
 		l1.736-0.563l20.154-12.22l1.891-0.845l1.902-0.188l14.053,2.009l1.53,0.59l0.636,0.49l1.3,1.249l1.53,0.953l1.873,1.48
 		l0.808,0.385l1.644,0.446l0.058,0.028l0.727,0.346l0.733,0.646l1.381,1.665l5.534,5.078l0.407,0.259l0.556,0.216l0.212,0.021
 		l0.229-0.159l0.63-0.319l0.636-0.206l1.375-0.168l0.659,0.006l1.495,0.321l1.323,0.643l2.423,1.832l1.083,1.197l1.593,2.651
@@ -1478,8 +1560,9 @@
 		l-1.913-3.476l2.108-10.136l3.214-1.508l4.119-0.001l0.338,0.113l0.487,0.534l0.315,0.13l0.894-0.451l2.349-1.844l1.318-1.286
 		l0.286-1.847l1.003-0.979l1.753,0.465l1.65-0.626l-0.619-3.358l-3.048-2.493l-1.902-0.898l-1.094-1.366l0.894-1.781l1.209-3.297
 		l0.367-1.474l-0.321-1.716l-0.527-1.641l-0.327-2.919l-0.808-2.848l-1.518-3.001l0.275-3.398l-1.186-2.887l-1.753-23.401
-		L310.891,80.446z"/>
-	<path data-capital = "akure" data-title = "ondo" id="on" class="st0" d="M417.037,89.088l16.159,1.898l2.057-0.003l2.956-0.839l1.003-0.068l11.773,1.387l1.174-0.088l0.384-0.162
+		L310.891,80.446z" />
+															<path data-capital="dutse" data-title="jigawa" id="jig"
+																class="st0" d="M417.037,89.088l16.159,1.898l2.057-0.003l2.956-0.839l1.003-0.068l11.773,1.387l1.174-0.088l0.384-0.162
 		l0.602-0.398l0.636-0.554l0.384-0.455l1.516,0.417l5.259,1.743l4.847-2.117l0.842-1.419l0.653-1.519l1.008-0.748l3.833-1.6
 		l2.698-0.717l5.225-2.124l2.481-0.638l2.315,0.707l1.432,2.201l1.449,5.684l0.533,1.426l2.395,0.366l3.655-1.049l1.822,0.148
 		l1.994,0.952l2.051,0.461l1.885-0.068l1.541,1.166l1.69,3.647l1.014,8.023l1.18,3.694l-7.322,4.887l-2.922-0.735l-1.701-1.113
@@ -1498,8 +1581,9 @@
 		l-0.613,1.081l-0.991-0.579l-0.246-0.788l0.006-0.846l-0.378-0.981l-2.79-5.001l-0.682-1.695l-1.175-1.303l-4.417-0.109
 		l-2.91-1.813l-0.12-3.65l0.458-3.824l0.779-1.48l5.906-0.902l3.982-0.084l3.649,0.452l8.53-0.383l1.048,1.024l0.968,2.918
 		l1.518,2.573l1.272,0.825l1.398,0.564l1.266-0.095l1.736-0.994l0.676,0.884l0.802,0.727l2.211,0.186l2.99-0.688l2.652-1.423
-		l2.469-1.985l0.596-0.946l0.447-1.112l0.487-0.777l0.688-0.627l0.957-0.417l0.292-0.894L417.037,89.088z"/>
-	<path data-capital = "asaba" data-title = "delta" id="del" class="st0" d="M196.71,481.928l-6.491-8.457l-1.132-1.064l-2.179-0.943l-1.01-1.143l-1.398-2.2l-1.935-2.026l-1.705-1.382
+		l2.469-1.985l0.596-0.946l0.447-1.112l0.487-0.777l0.688-0.627l0.957-0.417l0.292-0.894L417.037,89.088z" />
+															<path data-capital="akure" data-title="ondo" id="on"
+																class="st0" d="M196.71,481.928l-6.491-8.457l-1.132-1.064l-2.179-0.943l-1.01-1.143l-1.398-2.2l-1.935-2.026l-1.705-1.382
 		l-4.168-2.634l-1.836-1.164l-3.401-3.195l-2.125-1.366l-0.889-0.391l0.056-0.075l3.346,0.281l0.876-1.055l-0.086-1.5l-3.082-1.329
 		l-1.661,0.013l-0.945-1.123l0.876-0.354l1.816-0.244l2.807-2.062l0.888-0.28l0.613-0.711l0.149-0.751l-0.51-2.593l0.012-3.978
 		l-1.048-1.439l-1.386,0.665l-0.882,1.276l-2.389,1.489l-2.87-0.099l-0.922-0.157l-1.753-0.566l-0.745-0.532l-0.813-1.436
@@ -1517,8 +1601,9 @@
 		l-0.218,1.823l-0.195,0.781v1.743l0.269,0.469l0.481,0.239l0.951,1.509l0.974,2.935l-1.295,2.929l-0.928,1.4l-0.395,1.653
 		l-0.768,1.365l-1.404,0.759l-1.226,0.404l-0.756,1.177l-0.275,1.634l-0.344,0.699l-0.35,0.379l-0.103,0.415l0.304,0.545
 		l1.123,0.651l1.358,1.147l1.146,1.379l0.137,0.748l0.533,0.199l0.636,0.001l0.688,0.315l0.607,0.452l1.025,1.595l-0.023,1.747
-		l-6.182,15.088L196.71,481.928z"/>
-	<path data-capital = "yenogua" data-title = "bayelsa" id="bay" class="st0" d="M222.051,522.078l-0.328-0.853l1.182,0.116l1.123,0.263l-0.406-0.661l-1.516-1.667l-0.573-0.333l-0.208,0.233
+		l-6.182,15.088L196.71,481.928z" />
+															<path data-capital="asaba" data-title="delta" id="del"
+																class="st0" d="M222.051,522.078l-0.328-0.853l1.182,0.116l1.123,0.263l-0.406-0.661l-1.516-1.667l-0.573-0.333l-0.208,0.233
 		l0.05,1.019l-0.203,0.231l-0.523,0.018l-0.388,0.061l-0.807,0.301l-0.731-0.317l-1.331,0.231l-0.586-0.294l-0.108-0.451
 		l0.108-2.013l-0.248-2.573l-1.159-5.008l0.307-0.736l1.29-0.272l3.676-0.073l1.051-0.306l0.14,0.517l0.149,0.367l0.474,0.673
 		l0.447-0.358l0.419-0.834l0.302-0.365l0.32-0.224l1.926-0.752l0.911-0.172l0.844,0.034l0.568,0.383h0.352l-0.419-0.707l-1.326-1.16
@@ -1551,8 +1636,9 @@
 		l-0.739,0.164l-0.653-0.092l-0.699-0.211l-0.642-0.121l-0.487,0.217l-1.593,2.193l-0.917,0.492l-1.484-0.198l-1.146-0.487
 		l-1.163-0.687l-1.902-1.685l-0.71,0.339l-1.827,2.601l-1.535,0.817l-1.678,0.326l-1.031-0.237l-1.066,0.344l-1.008,0.46
 		l-1.037,0.332l-1.873,1.328l-2.028,1.083l-0.854-0.042l-0.962,0.132l-1.358-0.187l-1.048-0.815l-2.813-1.553l-2.544-0.851
-		l-2.16-1.382L222.051,522.078z"/>
-	<path data-capital = "portharcourt" data-title = "rivers" id="riv" class="st0" d="M292.029,552.253l-0.305,0.376l-0.848,2.34l-0.374,2.52l0.379,1.851l-0.244,0.461l-0.027,1.093l-0.108,0.726
+		l-2.16-1.382L222.051,522.078z" />
+															<path data-capital="yenogua" data-title="bayelsa" id="bay"
+																class="st0" d="M292.029,552.253l-0.305,0.376l-0.848,2.34l-0.374,2.52l0.379,1.851l-0.244,0.461l-0.027,1.093l-0.108,0.726
 		l-0.519-1.253l-0.171-0.765l-0.153-3.412l-0.293-0.679l-0.212,0.376l-0.253,0.321l-0.298,0.26l-0.374,0.215l0.298,0.787l0.05,2.595
 		l0.221,0.903l0.672,1.208l0.442,1.068l0.559,1.925l0.032,0.658l-0.411,0.593l-0.564,0.195l-1.71-0.027l-1.561,0.156l-0.325-0.332
 		l-0.604-1.796l-0.162-1.719l0.072-2.531l-0.235-2.034l-0.835-1.434l-1.683,0.167l1.547,1.224l0.555,1.957l-0.203,2.265
@@ -1582,8 +1668,9 @@
 		l-1.209,1.128l-0.773,1.788l-0.298,2.521l-0.453,1.192l-0.991,0.502l-0.332,0.496l-0.361,1.179l-0.246,1.399l-0.006,1.139
 		l0.149,0.614l0.223,0.604l0.321,0.561l0.441,0.502l-0.98,1.073l-0.544,1.187l-0.149,0.831l-1.14,1.669l-0.607,1.895l-0.029,2.267
 		l1.272,1.687l0.762,0.387l0.836,0.076l0.458,0.658l-0.286,1.046l0.596,1.696l1.724-0.16l4.583-1.714l3.432,2.164l0.43,2.006
-		l0.865,1.831l1.581,1.191l1.816,0.819L292.029,552.253z"/>
-	<path data-capital = "uyo" data-title = "akwa ibom" id="aks" class="st0" d="M336.977,546.062l-0.315,0.23l-0.406,0.489l-0.171,0.548l0.126,0.824l0.171,0.611l-0.004,0.557l-0.46,0.665
+		l0.865,1.831l1.581,1.191l1.816,0.819L292.029,552.253z" />
+															<path data-capital="portharcourt" data-title="rivers"
+																id="riv" class="st0" d="M336.977,546.062l-0.315,0.23l-0.406,0.489l-0.171,0.548l0.126,0.824l0.171,0.611l-0.004,0.557l-0.46,0.665
 		l-0.013,0.346l0.758,0.91l0.181,0.468l-0.181,0.14l-0.92,1.036l-0.514,0.405l-0.636,0.355l-0.627,0.063l-0.532-0.48h-0.379
 		l-0.478,1.147l-1.204-0.124l-1.922-1.023l-1.385-0.075l-1.444-0.287l-1.227-0.582l-0.695-0.953l-0.338,0.208l-0.379,0.118
 		l-1.001,0.05l-0.176,0.172l-0.068,0.389l-0.189,0.396l-0.528,0.219v0.344l0.365,0.226l0.393,0.188l-0.343,0.351l0.713,0.258
@@ -1621,8 +1708,9 @@
 		l0.514-1.002l0.555-0.285l2.68-0.819l0.654,0.233l1.971,1.018l0.979,0.231l1.01-0.111l1.994-0.5L337.392,558.199z M322.601,557.785
 		l2.522-0.258l0.713,0.258l-0.668,0.604l-0.343,0.661l-0.113,0.751l-0.014,0.869l-0.234,0.862l-0.523,0.543l-0.749,0.475
 		l-0.785,0.324l-4.935,1.02l-1.881-0.17l-0.537-0.665l0.537-1.05l1.773-1.882l1.245-1.927l1.069-1.235l0.23-0.529l0.217-0.923
-		l0.758,0.466l0.853,1.493L322.601,557.785z"/>
-	<path data-capital = "umuahia" data-title = "abia" id="abi" class="st0" d="M379.419,541.632l0.318,0.279l0.835,2.39l0.686,0.923l-0.19,0.348l-0.442,1.243l-0.081,0.514l0.221,0.797
+		l0.758,0.466l0.853,1.493L322.601,557.785z" />
+															<path data-capital="uyo" data-title="akwa ibom" id="aks"
+																class="st0" d="M379.419,541.632l0.318,0.279l0.835,2.39l0.686,0.923l-0.19,0.348l-0.442,1.243l-0.081,0.514l0.221,0.797
 		l0.537,0.312l0.627,0.19l0.501,0.428l0.162,1.297l-0.852,0.779l-1.083,0.652l-0.528,0.898l-0.758,1.69l-0.541,0.263l-0.528,0.097
 		l-2.413-0.002l-3.158-0.357h-4.745l-2.31-0.339l-1.069,0.034l-1.845,0.966l-1.074,0.133h-2.44l-9.469,1.102l-0.523-0.312
 		l-0.704-0.084l-0.659,0.219l-0.419,0.593l0.595-0.027l0.514,0.054l0.429,0.136l0.356,0.217l-1.195,0.314l-1.795,0.093l-1.624-0.258
@@ -1633,8 +1721,9 @@
 		l-0.59-1.004l0.109-1.136l2.486-0.679l2.813,0.391l1.616-1.054l0.344-1.039l-0.573-1.056l-1.363-0.404l0.04-0.768l1.381-3.033
 		l-0.338-3.821l1.461-1.046l2.114,0.324l2.738,1.94l1.891,2.914l3.122,1.748l2.882,2.26l-1.558,1.749l0.905,2.373l0.636,1.028
 		l1.106,0.857l3.254-0.562l1.432,0.378l2.469,1.536l0.922,1.074l-0.407,6.809l0.768,3.084l1.484,2.785l1.988,2.822l6.508,6.792
-		l2.125,1.569l0.647,0.125L379.419,541.632z"/>
-	<path data-capital = "abakaliki" data-title = "ebonyi" id="eb" class="st0" d="M356.06,491.094l0.917,2.542l-0.487,3.108l1.266,5.858l2.698,5.132l-0.693,1.968l-2.63-0.492l-2.882-2.26
+		l2.125,1.569l0.647,0.125L379.419,541.632z" />
+															<path data-capital="umuahia" data-title="abia" id="abi"
+																class="st0" d="M356.06,491.094l0.917,2.542l-0.487,3.108l1.266,5.858l2.698,5.132l-0.693,1.968l-2.63-0.492l-2.882-2.26
 		l-3.122-1.748l-1.891-2.914l-2.738-1.94l-2.114-0.324l-1.461,1.046l0.338,3.821l-1.381,3.033l-0.04,0.768l1.363,0.404l0.573,1.056
 		l-0.344,1.039l-1.616,1.054l-2.813-0.391l-2.486,0.679l-0.109,1.136l0.59,1.004l0.086,1.084l-0.756,3.472l-0.235,2.423l0.338,2.571
 		l-0.332,2.492l-1.799,1.82l-1.243,2.004l0.739,2.704l-0.332,1.009l-0.166,0.914l1.22,2.208l0.395,2.307l-3.707-2.487l-2.939-0.083
@@ -1642,8 +1731,9 @@
 		l0.665-1.381l0.521-1.47l0.762-1.145l0.418-1.315l-0.034-1.531l-0.218-1.515v-1.527l-0.39-1.443l-0.63-1.054l0.493-0.789l0.55-2.55
 		l-0.716-6.241l-2.131-1.902l-1.541-0.35l-2.784-1.42l-1.18-1.02l2.578-3.289l3.718-1.97l0.338,0.261l0.149,0.191l2.635-0.439
 		l2.675-0.101l3.615,2.743l0.092,3.259l-0.498,3.579l3.294,1.654l8.055,0.096l2.979,1.394l0.413,1.93l0.899,1.716l1.799,1.375
-		L356.06,491.094z"/>
-	<path data-capital = "awka" data-title = "anambra" id="anam" class="st0" d="M379.015,436.157l0.802,3.077l2.114,2.427l0.716,0.591l0.785,0.476l0.418,0.535l0.172,0.634l0.962,1.058
+		L356.06,491.094z" />
+															<path data-capital="abakaliki" data-title="ebonyi" id="eb"
+																class="st0" d="M379.015,436.157l0.802,3.077l2.114,2.427l0.716,0.591l0.785,0.476l0.418,0.535l0.172,0.634l0.962,1.058
 		l0.252,1.734l0.556,1.532l1.174,1.492l0.195,1.754l-3.443,1.949l-0.43,1.836l1.066,1.661l-0.464,3.789l-3.128,3.168l-1.278,1.634
 		l-1.043,1.671l-1.014,4.2l-0.934,1.463l-1.581-0.716l-1.501-0.004l-0.699,1.194l-0.882,1.081l-2.561,1.211l-1.008,0.975
 		l-1.426,0.062l-1.1-2.517l-2.062-0.595l-2.246,0.72l-0.647,1.404l0.894,1.744l-0.682,2.478l-1.977,3.023l-0.75,0.74l-0.074,1.319
@@ -1652,8 +1742,9 @@
 		l-0.624-2.916l0.361-2.803l1.352-1.479l1.089-1.669l-0.103-1.677l-0.401-1.753l-0.097-1.683l-0.647-2.344l-0.08-0.756l-0.997-1.487
 		l2.418-7.397l0.051-3.971l-2.183-7.129l1.764-1.102l1.862,0.161l3.689-0.382l1.81,3.837l3.81,2.356l2.452-3.322l0.544-4.683
 		l0.859-1.844l2.366-0.298l2.177-0.03l2.137-0.506l2.074-2.772l1.255-0.271l1.289,0.025l0.602-0.9l0.252-0.597l1.1,0.11l0.596,0.9
-		l0.453,2.169l0.687,1.852L379.015,436.157z"/>
-	<path data-capital = "benin" data-title = "edo" id="edo" class="st0" d="M285.548,489.261l0.206-2.375l0.367-1.501l0.55-1.435l1.077-1.905l2.211-2.957l0.206-0.475l0.08-0.521
+		l0.453,2.169l0.687,1.852L379.015,436.157z" />
+															<path data-capital="awka" data-title="anambra" id="anam"
+																class="st0" d="M285.548,489.261l0.206-2.375l0.367-1.501l0.55-1.435l1.077-1.905l2.211-2.957l0.206-0.475l0.08-0.521
 		l-0.08-0.969l0.052-0.501l0.739-2.837l-0.218-2.925l0.241-1.256l1.094-0.886l0.728-0.264l0.567-0.281l0.39-0.444l0.212-0.743
 		l0.178-2.466l-0.103-0.778L293.764,463l-0.728-1.402l-0.229-0.768l-0.218-2.171l-0.985-2.725l-0.344-3.068l-1.541-5.461
 		l-0.241-1.64l0.006-1.769l0.487-0.094l1.237,0.055l1.455,0.304l1.409-0.22l1.822-1.814l1.22-5.459l1.312-2.643l3.764-3.58
@@ -1662,8 +1753,9 @@
 		l0.023,1.049l-0.132,0.968l-0.212,0.752l0.458,0.648l0.877-0.176l0.779-0.619l0.917,0.568l0.235,1.348l1.329,0.975l-0.309,1.938
 		l0.659,1.631l0.899,1.515l0.596,1.727l1.209,1.396l1.57,0.249l1.467-0.436l0.602,0.085l0.991,0.568l0.281,0.591l0.556,0.12
 		l-3.718,1.97l-2.578,3.289l-2.303,0.471l-2.274,0.763l-5.007-1.083l-2.549,0.294l-2.503,0.612l-2.08,1.271l-0.745,2.363
-		l-2.177,4.46l-2.194,0.625l-2.383-1.015l-4.297,1.189l-3.712,2.975l-1.827-0.13L285.548,489.261z"/>
-	<path data-capital = "bauchi" data-title = "bauchi" id="bau" class="st0" d="M289.484,443.996l-1.724,2.105l-1.576,0.533l-1.959-0.35l-1.988,0.043l-3.357,1.447l-6.743,4.063l-5.248,2.17
+		l-2.177,4.46l-2.194,0.625l-2.383-1.015l-4.297,1.189l-3.712,2.975l-1.827-0.13L285.548,489.261z" />
+															<path data-capital="benin" data-title="edo" id="edo"
+																class="st0" d="M289.484,443.996l-1.724,2.105l-1.576,0.533l-1.959-0.35l-1.988,0.043l-3.357,1.447l-6.743,4.063l-5.248,2.17
 		l-1.461,0.917l-2.297,2.908l-1.558-0.027l-1.123-1.82l-1.398-1.452l-1.891-0.182l-1.295,1.205l-0.785,1.591l-0.183,1.977
 		l1.782,3.118l0.172,1.876l0.659,2.208l1.696,2.805l3.323,3.072l1.031,0.232l0.739,0.648l0.006,2.172l-0.653,2.111l-2.286,2.648
 		l-3.094,2.337l-2.269,2.699l-2.842,2.053l-5.431,1.162l-0.991,0.04l-0.934-0.327l-0.075-0.905l0.223-0.63l-0.298-0.645
@@ -1683,8 +1775,9 @@
 		l1.283,0.079l2.091-0.534l1.157,0.14l1.403,1.259l1.255,3.108l0.733,0.985l0.218,1.058l0.739,1.052l2.773-0.512l2.251-0.947
 		l1.472-0.123l0.842,0.651l0.613,0.778l0.149,0.961l0.75,0.442l1.461,0.448l0.12,0.472l0.888,1.923l0.149,0.509l0.074,1.086
 		l-0.223,1.034l-0.676,2.049l-0.269,2.891l-0.475,1.315l-0.052,0.574l0.029,2.462l-0.109,0.498l-1.449,3.105l-0.602,2.177
-		l-0.063,0.935l0.321,2.932l-0.246,7.147l0.229,2.37l1.111,3.155l0.109,0.839V443.996z"/>
-	<path data-capital = "jos" data-title = "plateau" id="pla" class="st0" d="M532.927,273.154l-3.85,0.004l-3.815-0.918l-3.661,0.616l-6.846,3.217l-7.024,0.216l-2.973,1.908l-1.724-0.701
+		l-0.063,0.935l0.321,2.932l-0.246,7.147l0.229,2.37l1.111,3.155l0.109,0.839V443.996z" />
+															<path data-capital="bauchi" data-title="bauchi" id="bau"
+																class="st0" d="M532.927,273.154l-3.85,0.004l-3.815-0.918l-3.661,0.616l-6.846,3.217l-7.024,0.216l-2.973,1.908l-1.724-0.701
 		l-9.252-5.776l-27.166-12.667l-1.747,0.392l-0.796,0.522l-0.722,1.299l2.143,3.053l0.745,1.989l-0.521,1.839l-3.626,1.389
 		l-1.409,1.239l-1.656,3.453l-1.988,0.821l-2.143,0.452l-8.782,0.452l-7.814-1.448l-3.454-1.114l-1.902-3.371l-2.481-2.91
 		l-2.017-0.628l-1.329-1.341l0.275-1.745l0.733-1.625l0.962-1.504l0.43-1.696l-0.229-4.604l-1.197-3.851l-3.546-1.286l-6.428,1.136
@@ -1702,8 +1795,9 @@
 		l-0.911,1.279l-1.318,1.437l-5.202,3.024l-2.658,3.646l-1.816,1.391l-4.211,1.293l-1.633,1.424l-1.702,4.193l-1.891,6.661
 		l-0.842,2.103l-2.899,4.088l-0.16,1.567l5.935,2.554l1.736,3.897l0.59,4.432l3.953,1.886l3.569,2.234l1.146,3.38l-0.115,7.83
 		l0.218,1.691l-0.149,1.63l-6.313,3.232l-0.315,1.865l2.297,3.252l11.435,8.527l1.661,3.703l0.372,3.625l0.899,3.489l1.587,3.222
-		l1.226,1.565L532.927,273.154z"/>
-	<path data-capital = "lafia" data-title = "nassarawa" id="nas" class="st0" d="M504.758,278.197l1.197,2.714l0.378,2.947l-0.43,3.612l0.619,4.19l0.464,1.667l0.905,1.532l1.61,5.333
+		l1.226,1.565L532.927,273.154z" />
+															<path data-capital="jos" data-title="plateau" id="pla"
+																class="st0" d="M504.758,278.197l1.197,2.714l0.378,2.947l-0.43,3.612l0.619,4.19l0.464,1.667l0.905,1.532l1.61,5.333
 		l-0.006,1.636l-0.384,1.736l0.71,3.467l0.069,2.166l-1.914,3.618l-8.771,4.34l-12.827,3.143l-2.693,3.195l-1.255,2.014
 		l-2.899,3.497l-1.552,1.396l-3.953,2.162l-3.644,2.641l-3.225,3.28l-3.581,2.757l-4.016,1.136l-4.171,0.297l-3.013-0.203
 		l-2.034-2.937l-2.985-1.881l-6.496-2.758l-3.454-0.119l-3.529,1.069l-5.082,0.88l-5.225-0.043l-3.38-0.917l-4.612-2.442
@@ -1715,8 +1809,9 @@
 		l0.281,2.765l-0.069,8.985l2.04,1.379l6.428-1.136l3.546,1.286l1.197,3.851l0.229,4.604l-0.43,1.696l-0.962,1.504l-0.733,1.625
 		l-0.275,1.745l1.329,1.341l2.017,0.628l2.481,2.91l1.902,3.371l3.454,1.114l7.814,1.448l8.782-0.452l2.143-0.452l1.988-0.821
 		l1.656-3.453l1.409-1.239l3.626-1.389l0.521-1.839l-0.745-1.989l-2.143-3.053l0.722-1.299l0.796-0.522l1.747-0.392l27.166,12.667
-		l9.252,5.776L504.758,278.197z"/>
-	<path data-capital = "gombe" data-title = "gombe" id="gom" class="st0" d="M452.379,342.471l-1.507,2.41l-2.263,1.465l-1.564,0.071l-1.575-0.232l-1.65-0.479l-1.581-0.276l-1.289-0.692
+		l9.252,5.776L504.758,278.197z" />
+															<path data-capital="lafia" data-title="nassarawa" id="nas"
+																class="st0" d="M452.379,342.471l-1.507,2.41l-2.263,1.465l-1.564,0.071l-1.575-0.232l-1.65-0.479l-1.581-0.276l-1.289-0.692
 		l-2.733-0.925l-1.375,0.575l-0.917,1.246l-0.584,1.457l-0.235,1.716l2.962,3.733l0.172,2.847l-0.097,0.985l0.424,1.04l0.183,1.484
 		l-1.14,1.008l-8.043,5.383l-1.913,1.635l-10.558-7.892v0.314l-2.028,0.155l-6.084-0.205l-4.033-0.871l-11.189-3.754l-7.304,0.832
 		l-3.082,2.629l-0.899,3.94l1.277,4.023l2.63,5.753l0.344,1.962l-0.71,0.914l-0.412-0.072l-0.676-0.223l-0.625-0.343l-1.381-1.073
@@ -1731,15 +1826,17 @@
 		l1.375,1.353l2.16-0.271l2.372-2.4l1.759-3.114l1.438-3.352l2.045-2.403l3.208,1.597l2.704,1.999l0.865,3.835l2.652,2.722
 		l3.638,0.715l3.781-0.06l0.934-0.141l0.848-0.408l1.747-0.458l1.53,1.011l0.991,1.257l-0.275,1.608l-0.825,1.957l-2.337,3.169
 		l-1.289,1.274l-2.051,0.667l-1.312,1.994l-1.398,1.693l-0.957,2.353l1.083,2.701l1.346,1.902l0.384,2.325l-0.309,2.703l1.209,2.311
-		l4.612,2.442l3.38,0.917l5.225,0.043l5.082-0.88l3.529-1.069l3.454,0.119l6.496,2.758l2.985,1.881L452.379,342.471z"/>
-	<path data-capital = "enugu" data-title = "enugu" id="enu" class="st0" d="M532.927,273.154l0.355-1.351l-1.226-1.565l-1.587-3.222l-0.899-3.489l-0.372-3.625l-1.661-3.703
+		l4.612,2.442l3.38,0.917l5.225,0.043l5.082-0.88l3.529-1.069l3.454,0.119l6.496,2.758l2.985,1.881L452.379,342.471z" />
+															<path data-capital="gombe" data-title="gombe" id="gom"
+																class="st0" d="M532.927,273.154l0.355-1.351l-1.226-1.565l-1.587-3.222l-0.899-3.489l-0.372-3.625l-1.661-3.703
 		l-11.435-8.527l-2.297-3.252l0.315-1.865l6.313-3.232l0.149-1.63l-0.218-1.691l0.115-7.83l-1.146-3.38l-3.569-2.234l-3.953-1.886
 		l-0.59-4.432l-1.736-3.897l-5.935-2.554l0.16-1.567l2.899-4.088l0.842-2.103l1.891-6.661l1.702-4.193l1.633-1.424l4.211-1.293
 		l1.816-1.391l2.658-3.646l5.202-3.024l1.318-1.437l0.911-1.279l1.123-0.819l7.682-2.042l7.614,3.733l3.535,2.764l3.059,3.272
 		l2.704,3.665l5.798,5.888l1.174,1.498l0.367,1.927l-0.716,12.951l0.378,4.053l0.487,1.67l3.901,0.393l2.085-0.223l0.687,4.913
 		l-4.096,6.664l-0.132,2.483l1.157,2.468l1.724,2.127l2.108,1.477l2.395,0.918l2.034,1.374l3.729,6.044l3.947,2.492l-0.579,4.901
-		l0.292,7.422l-0.848,2.336l-2.068,1.709l-10.26,6.178l-4.703,2.098l-5.093,0.825l-19.461,0.805L532.927,273.154z"/>
-	<path data-capital = "lokoja" data-title = "kogi" id="kog" class="st0" d="M334.771,413.888l0.55,2.251l2.148,4.44l1.518,1.904l1.85,1.751l2.062,1.51l2.108,1.023l2.246-0.267
+		l0.292,7.422l-0.848,2.336l-2.068,1.709l-10.26,6.178l-4.703,2.098l-5.093,0.825l-19.461,0.805L532.927,273.154z" />
+															<path data-capital="enugu" data-title="enugu" id="enu"
+																class="st0" d="M334.771,413.888l0.55,2.251l2.148,4.44l1.518,1.904l1.85,1.751l2.062,1.51l2.108,1.023l2.246-0.267
 		l1.638-1.233l2.005-0.522l2.297,1.121l1.386,2.216l0.613,2.683l-0.017,2.71l-1.896,5.214l-3.689,0.382l-1.862-0.161l-1.764,1.102
 		l2.183,7.129l-0.051,3.971l-2.418,7.397l0.997,1.487l0.08,0.756l0.647,2.344l0.097,1.683l0.401,1.753l0.103,1.677l-1.089,1.669
 		l-1.352,1.479l-0.361,2.803l0.624,2.916l-1.49,0.769l-1.982-1.836l-1.18-0.821l-1.432-0.72l-2.767,0.875l-3.615-2.743l-2.675,0.101
@@ -1749,8 +1846,9 @@
 		l-1.134-1.548l-0.842-0.463l-1.85-0.353l-0.819-0.398l-0.487-1.372l1.495-4.189l3.088-3.368l0.241-3.752l-1.696-0.733l-1.77-0.375
 		l-3.197-1.363l-2.956,0.117l-0.722-0.34l0.052-1.791l-0.481-1.563l1.484-2.954l1.839-1.187l0.143,0.454l0.006,0.506l0.258,0.792
 		l0.372,0.332l0.882,1.307l1.392,0.628l2.452-1.898l2.085-2.557l4.635-3.234l2.756-2.567l3.174-4.143l1.02-0.936l1.73-0.608
-		l1.782-1.397l2.022-1.059l2.71,0.164L334.771,413.888z"/>
-	<path data-capital = "oshogbo" data-title = "osun" id="osun" class="st0" d="M344.321,360.697l-0.309,3.219l0.155,2.957l0.693,2.822l1.633,2.438l1.627,1.639l1.094,2.005l0.235,2.024
+		l1.782-1.397l2.022-1.059l2.71,0.164L334.771,413.888z" />
+															<path data-capital="lokoja" data-title="kogi" id="kog"
+																class="st0" d="M344.321,360.697l-0.309,3.219l0.155,2.957l0.693,2.822l1.633,2.438l1.627,1.639l1.094,2.005l0.235,2.024
 		l-0.132,6.46l0.865,6.689l0.664,2.17l1.787,0.982l2.108-0.283l1.398,0.975l-1.129,1.963l-0.642,1.617l-0.132,1.792l-0.98,4.472
 		l-2.314,3.852l-7.356,4.01l-0.894,2.214l-0.16,2.53l-1.484,0.459l-1.776-0.818l-2.378-1.96l-2.125-1.036l-1.839-1.7l-2.71-0.164
 		l-2.022,1.059l-1.782,1.397l-1.73,0.608l-1.02,0.936l-3.174,4.143l-2.756,2.567l-4.635,3.234l-2.085,2.557l-2.452,1.898
@@ -1772,8 +1870,9 @@
 		l-0.109-1.248l0.888-0.883l1.14-0.395l1.633-1.571l0.739-2.219l3.397-0.11l2.062,0.226l1.982-0.342l0.493-0.054l-0.47,1.908
 		l-1.375,3.628l2.675,4.753l0.235,3.662l-0.859,8.225l-0.665,1.754l-1.014,1.584l-0.63,2.24l-0.097,2.334l0.464,0.12l1.312-0.552
 		l1.914-1.196l1.071-0.957l0.395-0.185l0.069-0.312l2.847-1.711l11.183-3.807l1.856-0.198l9.751,0.855l7.843-0.767l0.922,0.066
-		L344.321,360.697z"/>
-	<path data-capital = "owerri" data-title = "imo" id="imo" class="st0" d="M172.214,418.7l-0.865-1.066l-2.24,0.211l-1.003,0.283l-0.922,0.413l-1.197-0.062l-1.163-0.348l-1.948,1.082
+		L344.321,360.697z" />
+															<path data-capital="oshogbo" data-title="osun" id="osun"
+																class="st0" d="M172.214,418.7l-0.865-1.066l-2.24,0.211l-1.003,0.283l-0.922,0.413l-1.197-0.062l-1.163-0.348l-1.948,1.082
 		l-1.581-0.078l-0.292-0.828l-0.149-0.889l-0.521-1.44l-0.676-1.388l-1.827-1.556l-2.572,0.11l-2.097,1.348l-2.24,0.266
 		l-0.453-2.527l-1.157-2.348l-3.924,1.885l3.792-20.225l-0.309-1.553l-1.089-1.331l-0.888-1.768l-1.209-1.56l-1.535-0.942
 		l-1.146-1.276l0.074-1.633l0.934-1.403l0.498-1.577l0.286-1.645l0.195-3.647l0.911-2.546l3.741,0.998l2.842-2.053l-0.057-1.254
@@ -1783,21 +1882,25 @@
 		l2.194-0.917l2.309,0.058l1.18,1.927l1.65,1.105l3.18-0.431l0.819,0.191l-1.26,4.55l-1.707,1.537l-2.12,1.011l-2.561,3.396
 		l-0.452,6.715l-0.596,2.463l0.286,2.897l4.383,11.874l-0.04,2.236l-2.71,0.748l-2.418,1.248l-0.98,2.616l-0.458,2.663l0.017,4.198
 		l-0.16,1.498l0.126,1.28l-0.149,1.207l-0.579,0.434l-1.472-0.117l-0.687-0.319l-2.79-1.826l-2.074-0.872l-2.194,0.618l-2.355,1.886
-		l-1.507,2.583l-0.413,1.439l-0.871,1.192L172.214,418.7z"/>
-	<path data-capital = "ado-ekiti" data-title = "ekiti" id="ekiti" class="st0" d="M321.342,518.688l-1.644,0.467l-1.77,0.213l-2.927-0.846l-6.978,0.696l-7.814-0.544l-5.843-3.807l-0.39-0.741
+		l-1.507,2.583l-0.413,1.439l-0.871,1.192L172.214,418.7z" />
+															<path data-capital="owerri" data-title="imo" id="imo"
+																class="st0" d="M321.342,518.688l-1.644,0.467l-1.77,0.213l-2.927-0.846l-6.978,0.696l-7.814-0.544l-5.843-3.807l-0.39-0.741
 		l-1.329-0.979l-0.521-0.603l-0.069-1.927l0.808-1.798l0.453-3.962l-2.286-2.401l-2.005,0.496l-1.982-0.141l-0.361-1.234
 		l1.713-8.775l0.647-1.931l3.712-2.975l4.297-1.189l2.383,1.015l2.194-0.625l2.177-4.46l0.745-2.363l2.08-1.271l2.503-0.612
 		l2.549-0.294l5.007,1.083l2.274-0.763l2.303-0.471l1.18,1.02l2.784,1.42l1.541,0.35l2.131,1.902l0.716,6.241l-0.55,2.55
 		l-0.493,0.789l0.63,1.054l0.39,1.443v1.527l0.218,1.515l0.034,1.531l-0.418,1.315l-0.762,1.145l-0.521,1.47l-0.665,1.381
-		l-2.097,2.357L321.342,518.688z"/>
-	<path data-capital = "kaduna" data-title = "kaduna" id="kd" class="st0" d="M226.255,358.241l-1.106,1.562l0.086,2.363l1.054,0.395l1.501-0.892l1.999-0.47l2.051-0.202l1.031,0.143
+		l-2.097,2.357L321.342,518.688z" />
+															<path data-capital="ado-ekiti" data-title="ekiti" id="ekiti"
+																class="st0" d="M226.255,358.241l-1.106,1.562l0.086,2.363l1.054,0.395l1.501-0.892l1.999-0.47l2.051-0.202l1.031,0.143
 		l0.819,0.599l-0.086,1.244l-1.232,0.729l-1.598,2.013l-0.418,2.382l0.819,2.406l1.827,1.638l0.756-0.049l0.9,0.789l4.354,2.145
 		l2.504,0.75l-0.98,1.596l-1.375,0.53l-1.524-0.678l-1.438,0.795l-0.538,1.009l-0.682,0.944l-1.461,0.835l-2.406,2.595l-0.733,1.624
 		l-0.991,5.312l-3.036,7.111l-5.838,4.941l-3.122-1.221l-1.169-3.874l-1.358-2.717l-2.807-0.861l-3.947,0.228l-6.067-0.435
 		l-2.091,0.079l-3.884,1.268l-4.383-11.874l-0.286-2.897l0.596-2.463l0.452-6.715l2.561-3.396l2.12-1.011l1.707-1.537l1.26-4.55
 		l0.636,0.392l0.281,0.959l1.157,0.471l3.46-1.03l3.672,2.285l2.194,0.181l1.363,0.285l2.332-0.386l0.458,0.143l0.498-0.149
-		l0.688-1.306l0.321-1.792l1.174-1.436l1.982-0.602L226.255,358.241z"/>
-	<path data-capital = "kano" data-title = "kano" id="kan" class="st0" d="M403.924,218.958l-0.607,3.7l-1.868,3.363l0.75,1.472l1.667,0.904l1.306,1.214l1.174,1.374l-0.527,1.628
+		l0.688-1.306l0.321-1.792l1.174-1.436l1.982-0.602L226.255,358.241z" />
+															<path data-capital="kaduna" data-title="kaduna" id="kd"
+																class="st0"
+																d="M403.924,218.958l-0.607,3.7l-1.868,3.363l0.75,1.472l1.667,0.904l1.306,1.214l1.174,1.374l-0.527,1.628
 		l-0.241,1.894l-1.375,1.761l-2.011,0.95l-2.773,3.145l-1.008,4.189l1.438,4.258l-2.188,7.399l0.017,4.304l-0.309,2.183l0.47,1.895
 		l-2.303,3.169l0.023,0.94l-0.16,1.029l-1.581,1.152l0.017,7.998l2.246,3.335l2.629,2.745l2.091,3.008l-0.241,3.419l-1.146,3.21
 		l-2.045,2.403l-1.438,3.352l-1.759,3.114l-2.372,2.4l-2.16,0.271l-1.375-1.353l-0.728-1.265l-1.077-1.056l-2.234-2.902l-4.99-1.361
@@ -1821,8 +1924,9 @@
 		l1.976,0.689l1.524-0.819l0.286-2.029l0.945-1.813l3.477-2.049l4.033,0.792l2.137,0.96l1.896,1.389l1.094,1.5l1.587,0.688
 		l4.491-1.842l1.913-2.939l3.821-0.333l6.508-4.868l7.797-2.509l1.971,0.937l-0.086,2.145l-1.043,1.856l-0.246,2.007l1.129,1.841
 		l1.793,1.214l3.913,1.379l1.805,1.436l1.358,1.871l3.85,1.486l4.216,1.118l5.683,6.083l1.083,7.859l-1.06,4.32l0.865,6.751
-		l-0.802,2.12l-2.349,0.583l-1.157,1.558l3.031,2.543l4.451,0.573l2.429,2.917l1.077,0.546l2.309,0.557L403.924,218.958z"/>
-	<path data-capital = "abuja" data-title = "fct" id="fct" class="st0" d="M430.718,174.165l-4.182,1.738l-1.02,0.2l-0.951-0.476l-0.825-0.546l-3.707,1.704l-5.672,5.936l-2.183,3.254
+		l-0.802,2.12l-2.349,0.583l-1.157,1.558l3.031,2.543l4.451,0.573l2.429,2.917l1.077,0.546l2.309,0.557L403.924,218.958z" />
+															<path data-capital="kano" data-title="kano" id="kan"
+																class="st0" d="M430.718,174.165l-4.182,1.738l-1.02,0.2l-0.951-0.476l-0.825-0.546l-3.707,1.704l-5.672,5.936l-2.183,3.254
 		l-1.501,1.641l-1.982,0.906l-3.311,0.201l-1.673,3.575l-0.355,4.234l0.16,4.724l1.581,4.293l2.538,3.037l0.395,3.883l-1.558,3.69
 		l-2.549,2.799l-1.151,0.249l-2.309-0.557l-1.077-0.546l-2.429-2.917l-4.451-0.573l-3.031-2.543l1.157-1.558l2.349-0.583l0.802-2.12
 		l-0.865-6.751l1.06-4.32l-1.083-7.859l-5.683-6.083l-4.216-1.118l-3.85-1.486l-1.358-1.871l-1.805-1.436l-3.913-1.379l-1.793-1.214
@@ -1835,21 +1939,39 @@
 		l-0.584,0.772l-0.452,0.888l0.745,1.205l0.55,0.422l0.544,0.215l1.318-0.483l2.297-0.338l0.424,0.198l0.372,1.371l0.069,1.441
 		l3.454,0.009l1.965-1.331l2.561,0.289l0.613,1.64l0.825,3.363l-0.137,1.939l-0.647,1.773l-0.252,1.376l-0.475,1.32l-2.022,2.972
 		l-0.762,3.432l0.905,0.816l2.378-0.192l1.518,0.167l0.613,0.451l1.26,3.201l0.791,1.249l1.53,1.633l1.289,0.775l0.71,0.224
-		l1.26,0.775l-0.504,1.264l-4.91,4.472l-0.876,1.542l-0.51,1.718l-0.086,0.77l0.052,1.527L430.718,174.165z"/>
-	<path data-capital = "yenogua" data-title = "kebbi" id="kb" class="st0" d="M306.19,339.076l-0.493,0.054l-1.982,0.342l-2.062-0.226l-3.397,0.11l-2.526-0.298l-1.346-2.369l-0.338-1.002
+		l1.26,0.775l-0.504,1.264l-4.91,4.472l-0.876,1.542l-0.51,1.718l-0.086,0.77l0.052,1.527L430.718,174.165z" />
+															<path data-capital="abuja" data-title="fct" id="fct"
+																class="st0" d="M306.19,339.076l-0.493,0.054l-1.982,0.342l-2.062-0.226l-3.397,0.11l-2.526-0.298l-1.346-2.369l-0.338-1.002
 		l-0.521-40.018l0.246-1.587l1.346-0.633l10.243-0.403l3.34,1.045l5.179,5.057l2.612,1.465l0.349-0.09l7.791-11.133l5.265-0.573
 		l1.553,0.051l1.53,0.242l1.392,0.586l1.203-0.903l1.764-2.435l1.982,0.75l1.02,1.903l1.753-0.366l0.132,1.117l-0.189,1.077
 		l-0.664,0.43l-0.642,0.193l-1.014,1.843l-1.277,6.015l-0.138,3.491l0.206,5.481l-2.595,11.324l-2.395,6.714l-1.954,3.138
-		l-2.423,2.714l-7.133,3.549l-7.826,2.111L306.19,339.076z"/>
-</g>
-<g id="Copyright">
-	<text transform="matrix(1 0 0 1 681.6426 577.5916)" class="st1 st2">© Vemaps.com</text>
-</g>
-</svg>
+		l-2.423,2.714l-7.133,3.549l-7.826,2.111L306.19,339.076z" />
+														</g>
+														<g id="Copyright">
+															<text transform="matrix(1 0 0 1 681.6426 577.5916)"
+																class="st1 st2">© Vemaps.com</text>
+														</g>
+													</svg>
 
-<h4 class="card-title"><span id="hover_state">Akwa Ibom</span> State.</h4>
-<hr>
-<h3 class="card-title">Cases : <span>5</span> <hr> Recoveries : <span>5</span> <hr> Deaths : <span>5</span> </h3>
+													<h4 class="card-title"><span id="hover_state">Akwa Ibom</span>
+														State.</h4>
+													<div class="card-footer">
+														<div class="row user-stats text-center">
+															<div class="col">
+																<div class="number">125</div>
+																<div class="title">Cases</div>
+															</div>
+															<div class="col">
+																<div class="number">25K</div>
+																<div class="title">Deaths</div>
+															</div>
+															<div class="col">
+																<div class="number">134</div>
+																<div class="title">Recoveries</div>
+															</div>
+														</div>
+													</div>
+
 												</div>
 											</div>
 										</div>
@@ -1882,12 +2004,13 @@
 						</ul>
 					</nav>
 					<div class="copyright ml-auto">
-						2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
-					</div>				
+						2018, made with <i class="fa fa-heart heart text-danger"></i> by <a
+							href="https://www.themekita.com">ThemeKita</a>
+					</div>
 				</div>
 			</footer>
 		</div>
-		
+
 		<!-- Custom template | don't include it in your project! -->
 		<div class="custom-template">
 			<div class="title">Settings</div>
@@ -1904,7 +2027,7 @@
 							<button type="button" class="changeLogoHeaderColor" data-color="orange"></button>
 							<button type="button" class="changeLogoHeaderColor" data-color="red"></button>
 							<button type="button" class="changeLogoHeaderColor" data-color="white"></button>
-							<br/>
+							<br />
 							<button type="button" class="changeLogoHeaderColor" data-color="dark2"></button>
 							<button type="button" class="changeLogoHeaderColor" data-color="blue2"></button>
 							<button type="button" class="changeLogoHeaderColor" data-color="purple2"></button>
@@ -1925,7 +2048,7 @@
 							<button type="button" class="changeTopBarColor" data-color="orange"></button>
 							<button type="button" class="changeTopBarColor" data-color="red"></button>
 							<button type="button" class="changeTopBarColor" data-color="white"></button>
-							<br/>
+							<br />
 							<button type="button" class="changeTopBarColor" data-color="dark2"></button>
 							<button type="button" class="selected changeTopBarColor" data-color="blue2"></button>
 							<button type="button" class="changeTopBarColor" data-color="purple2"></button>
@@ -2003,48 +2126,48 @@
 	<script src="../assets/js/demo.js"></script>
 	<script>
 		Circles.create({
-			id:'circles-1',
-			radius:45,
-			value:60,
-			maxValue:100,
-			width:7,
+			id: 'circles-1',
+			radius: 45,
+			value: 60,
+			maxValue: 100,
+			width: 7,
 			text: 5,
-			colors:['#f1f1f1', '#FF9E27'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
+			colors: ['#f1f1f1', '#FF9E27'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
 		})
 
 		Circles.create({
-			id:'circles-3',
-			radius:45,
-			value:70,
-			maxValue:100,
-			width:7,
+			id: 'circles-3',
+			radius: 45,
+			value: 70,
+			maxValue: 100,
+			width: 7,
 			text: 36,
-			colors:['#f1f1f1', '#2BB930'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
+			colors: ['#f1f1f1', '#2BB930'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
 		})
 
 		Circles.create({
-			id:'circles-2',
-			radius:45,
-			value:40,
-			maxValue:100,
-			width:7,
+			id: 'circles-2',
+			radius: 45,
+			value: 40,
+			maxValue: 100,
+			width: 7,
 			text: 12,
-			colors:['#f1f1f1', '#F25961'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
+			colors: ['#f1f1f1', '#F25961'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
 		})
 
 		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
@@ -2053,7 +2176,7 @@
 			type: 'bar',
 			data: {
 				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
-				datasets : [{
+				datasets: [{
 					label: "Total Income",
 					backgroundColor: '#ff9e27',
 					borderColor: 'rgb(23, 125, 255)',
@@ -2071,22 +2194,22 @@
 						ticks: {
 							display: false //this will remove only the label
 						},
-						gridLines : {
+						gridLines: {
 							drawBorder: false,
-							display : false
+							display: false
 						}
 					}],
-					xAxes : [ {
-						gridLines : {
+					xAxes: [{
+						gridLines: {
 							drawBorder: false,
-							display : false
+							display: false
 						}
 					}]
 				},
 			}
 		});
 
-		$('#lineChart').sparkline([105,103,123,100,95,105,115], {
+		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
 			type: 'line',
 			height: '70',
 			width: '100%',
@@ -2096,58 +2219,59 @@
 		});
 	</script>
 
-<script >
-	$(document).ready(function() {
-		$('#basic-datatables').DataTable({
-			"bLengthChange": false,
-			"pageLength": 50,
-			"bPaginate": false,
-			"bFilter": false
-		});		
-	});
-	
-	$(document).ready(function() {
-		$('#list-datatables').DataTable({
-			pageLength : 5
-			});		
-	});
-	
-	$(document).ready(function() {
-		$('#nigeria-datatables').DataTable({
-			pageLength : 5
-			});		
-	});
-</script>
-<script>
+	<script>
+		$(document).ready(function () {
+			$('#basic-datatables').DataTable({
+				"bLengthChange": false,
+				"pageLength": 50,
+				"bPaginate": false,
+				"bFilter": false
+			});
+		});
 
-	function titleCase(string) {
-		var sentence = string.toLowerCase().split("%%");
-		for(var i = 0; i< sentence.length; i++){
-			sentence[i] = sentence[i][0].toUpperCase() + sentence[i].slice(1);
+		$(document).ready(function () {
+			$('#list-datatables').DataTable({
+				pageLength: 5
+			});
+		});
+
+		$(document).ready(function () {
+			$('#nigeria-datatables').DataTable({
+				pageLength: 5
+			});
+		});
+	</script>
+	<script>
+
+		function titleCase(string) {
+			var sentence = string.toLowerCase().split("%%");
+			for (var i = 0; i < sentence.length; i++) {
+				sentence[i] = sentence[i][0].toUpperCase() + sentence[i].slice(1);
+			}
+			document.write(sentence.join("%%"));
+			return sentence;
 		}
-	document.write(sentence.join("%%"));
-	return sentence;
-	}
-	const states = document.getElementsByClassName("st0");
-	const hover_state = document.getElementById("hover_state");
+		const states = document.getElementsByClassName("st0");
+		const hover_state = document.getElementById("hover_state");
 
-	states_array = Array.from(states)
+		states_array = Array.from(states)
 
-	states_array.forEach(element => {
+		states_array.forEach(element => {
 
-		console.log(element.getAttribute("data-title"));
-		let state = titleCase(element.getAttribute("data-title"));
+			console.log(element.getAttribute("data-title"));
+			let state = titleCase(element.getAttribute("data-title"));
 
-		element.addEventListener("mouseover", (e)=>{
-			e.target.style.fill = "red";
-			hover_state.innerText = state;
-		})
-		element.addEventListener("mouseout", (e)=>{
-			e.target.style.fill = "rgb(223, 223, 223)";
-		})
+			element.addEventListener("mouseover", (e) => {
+				e.target.style.fill = "red";
+				hover_state.innerText = state;
+			})
+			element.addEventListener("mouseout", (e) => {
+				e.target.style.fill = "rgb(223, 223, 223)";
+			})
 
-	});
-	console.log(states);
-</script>
+		});
+		console.log(states);
+	</script>
 </body>
+
 </html>
