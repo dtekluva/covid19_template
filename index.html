@@ -420,6 +420,16 @@
 							<div class="collapse" id="dashboard">
 								<ul class="nav nav-collapse">
 									<li>
+										<a href="https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic">
+											<span class="sub-item">Wik - Global DataSource</span>
+										</a>
+									</li>
+									<li>
+										<a href="https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Nigeria">
+											<span class="sub-item">Wiki - Nigeria DataSource</span>
+										</a>
+									</li>
+									<li>
 										<a href="https://covid19.datanigeria.xyz">
 											<span class="sub-item">NCOVID-19 Dashboard</span>
 										</a>
@@ -697,11 +707,7 @@
 								<div class="form-group">
 									<label for="defaultSelect">SELECT COUNTRY</label>
 									<select class="form-control form-control" id="defaultSelect">
-										<option>AMERICA</option>
-										<option>SOUTH AMERICA</option>
-										<option>NIGERIA</option>
-										<option>CONGO</option>
-										<option>FRANCE</option>
+										<option>SELECT COUNTRY</option>
 									</select>
 								</div>
 							</div>
@@ -713,20 +719,20 @@
 						<div class="col-md-6">
 							<div class="card full-height">
 								<div class="card-body">
-									<div class="card-title">Overall statistics</div>
-									<div class="card-category">Global Performance</div>
+									<div class="card-title">Overall Stats For <span id = "set_country1">World</span></div>
+									<div class="card-category">Viral Activity Overview</div>
 									<div class="d-flex flex-wrap justify-content-around pb-2 pt-4">
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-1"></div>
-											<h6 class="fw-bold mt-3 mb-0">Cases (10 Today) </h6>
+											<h6 class="fw-bold mt-3 mb-0">Cases  </h6>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-2"></div>
-											<h6 class="fw-bold mt-3 mb-0">Deaths (10 Today)</h6>
+											<h6 class="fw-bold mt-3 mb-0">Deaths </h6>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-3"></div>
-											<h6 class="fw-bold mt-3 mb-0">Recoveries (10 Today)</h6>
+											<h6 class="fw-bold mt-3 mb-0">Recoveries </h6>
 										</div>
 									</div>
 								</div>
@@ -735,28 +741,28 @@
 						<div class="col-md-6">
 							<div class="card full-height">
 								<div class="card-body">
-									<div class="card-title">Statistics for Nigeria</div>
+									<div class="card-title">14 day Statistics for <span id = "set_country2">Nigeria</span></div>
 									<div class="row py-3">
 										<div class="col-md-4 d-flex flex-column justify-content-around">
 											<div>
-												<h6 class="fw-bold text-uppercase text-warning op-8">Case increase rate
+												<h6 class="fw-bold text-uppercase text-warning op-8">Daily Average Case
 												</h6>
-												<h3 class="fw-bold">9.782/week</h3>
+												<h3 class="fw-bold"><span id="daily_average">-</span> per day</h3>
 											</div>
 											<div>
-												<h6 class="fw-bold text-uppercase text-danger op-8">Case - Death rate
+												<h6 class="fw-bold text-uppercase text-danger op-8">Death Rate
 												</h6>
-												<h3 class="fw-bold">20%</h3>
+												<h3 class="fw-bold"><span id="death_rate">-</span>%</h3>
 											</div>
 											<div>
-												<h6 class="fw-bold text-uppercase text-success op-8">Case - Recov rate
+												<h6 class="fw-bold text-uppercase text-success op-8">Recov Rate
 												</h6>
-												<h3 class="fw-bold">10%</h3>
+												<h3 class="fw-bold"><span id="recovery_rate">-</span>%</h3>
 											</div>
 										</div>
 										<div class="col-md-8">
 											<div id="chart-container">
-												<canvas id="totalIncomeChart"></canvas>
+												<canvas id="moving_diff_chart"></canvas>
 											</div>
 										</div>
 									</div>
@@ -769,25 +775,39 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title">Detailed Charts</div>
 										<div class="card-tools">
 											<div class="form-group">
-												<!-- <label class="form-label">Size</label> -->
 												<div class="selectgroup w-100">
 													<label class="selectgroup-item">
 														<input type="radio" name="value" value="50"
 															class="selectgroup-input"="">
-														<span class="selectgroup-button">LINE</span>
+														<span data-type = "chart_view" class="selectgroup-button chart_view">CASES</span>
 													</label>
 													<label class="selectgroup-item">
 														<input type="radio" name="value" value="100"
 															class="selectgroup-input">
-														<span class="selectgroup-button">BAR</span>
+														<span data-type = "chart_view" class="selectgroup-button chart_view">RECOV</span>
 													</label>
 													<label class="selectgroup-item">
 														<input type="radio" name="value" value="150"
 															class="selectgroup-input">
-														<span class="selectgroup-button">PIE</span>
+														<span data-type = "chart_view" class="selectgroup-button chart_view">DEATHS</span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="card-tools">
+											<div class="form-group">
+												<div class="selectgroup w-100">
+													<label class="selectgroup-item">
+														<input type="radio" name="value" value="50"
+															class="selectgroup-input"="">
+														<span  class="selectgroup-button chart_type" data-type = "chart_type">HISTORIC</span>
+													</label>
+													<label class="selectgroup-item">
+														<input type="radio" name="value" value="150"
+															class="selectgroup-input">
+														<span class="selectgroup-button chart_type" data-type = "chart_type">TODAY</span>
 													</label>
 												</div>
 											</div>
@@ -799,17 +819,12 @@
 													<label class="selectgroup-item">
 														<input type="radio" name="value" value="50"
 															class="selectgroup-input"="">
-														<span class="selectgroup-button">MONTHLY</span>
-													</label>
-													<label class="selectgroup-item">
-														<input type="radio" name="value" value="100"
-															class="selectgroup-input">
-														<span class="selectgroup-button">WEEKLY</span>
+														<span class="selectgroup-button chart_scale" data-type = "chart_scale">LOGARITHMIC</span>
 													</label>
 													<label class="selectgroup-item">
 														<input type="radio" name="value" value="150"
 															class="selectgroup-input">
-														<span class="selectgroup-button">DAILY</span>
+														<span class="selectgroup-button chart_scale" data-type = "chart_scale">LINEAR</span>
 													</label>
 												</div>
 											</div>
@@ -818,8 +833,8 @@
 
 								</div>
 								<div class="card-body">
-									<div class="chart-container" style="min-height: 375px">
-										<canvas id="statisticsChart"></canvas>
+									<div id="chart-container-compare" class="chart-container" style="min-height: 375px">
+										<canvas id="compare_chart"></canvas>
 									</div>
 									<div id="myChartLegend"></div>
 								</div>
@@ -837,82 +852,12 @@
 											<tr>
 												<th colspan="2" scope="col">Plot</th>
 												<th colspan="2" scope="col">Country</th>
-												<th colspan="2" scope="col">Cases</th>
+												<th colspan="2" scope="col">Active</th>
 											</tr>
 										</thead>
-										<tbody>
-											<tr>
-												<td colspan="2"><label class="container">
-														<input type="checkbox" checked="checked">
-														<span class="checkmark"></span>
-													</label></td>
-												<td colspan="1">Nigeria</td>
-												<td colspan="2">256</td>
-											</tr>
-											<tr>
-												<td colspan="1"><label class="container">
-														<input type="checkbox" checked="checked">
-														<span class="checkmark"></span>
-													</label>></td>
-												<td colspan="2">Argentina</td>
-												<td colspan="2">1220</td>
-											</tr>
-											<tr>
-												<td colspan="1"><label class="container">
-														<input type="checkbox" checked="checked">
-														<span class="checkmark"></span>
-													</label></td>
-												<td colspan="2">South Africa</td>
-												<td colspan="2">890</td>
-											</tr>
-											<tr>
-												<td colspan="1"><label class="container">
-														<input type="checkbox" checked="checked">
-														<span class="checkmark"></span>
-													</label></td>
-												<td colspan="2">Seychelles</td>
-												<td colspan="2">890</td>
-											</tr>
-											<tr>
-												<td colspan="1"><label class="container">
-														<input type="checkbox" checked="checked">
-														<span class="checkmark"></span>
-													</label></td>
-												<td colspan="2">Egypt</td>
-												<td colspan="2">1100</td>
-											</tr>
-											<tr>
-												<td colspan="1"><label class="container">
-														<input type="checkbox" checked="checked">
-														<span class="checkmark"></span>
-													</label></td>
-												<td colspan="2">Congo</td>
-												<td colspan="2">10</td>
-											</tr>
-											<tr>
-												<td colspan="1"><label class="container">
-														<input type="checkbox" checked="checked">
-														<span class="checkmark"></span>
-													</label></td>
-												<td colspan="2">Brazil</td>
-												<td colspan="2">980</td>
-											</tr>
-											<tr>
-												<td colspan="2"><label class="container">
-														<input type="checkbox" checked="checked">
-														<span class="checkmark"></span>
-													</label></td>
-												<td colspan="2">Jamaica</td>
-												<td colspan="2">50</td>
-											</tr>
-											<tr>
-												<td colspan="2"><label class="container">
-														<input type="checkbox" checked="checked">
-														<span class="checkmark"></span>
-													</label></td>
-												<td colspan="2">Ireland</td>
-												<td colspan="2">580</td>
-											</tr>
+										<tbody id="plot_options">
+											
+											
 
 										</tbody>
 									</table>
@@ -925,7 +870,7 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row card-tools-still-right">
-										<h4 class="card-title">Global Geolocation Distribution</h4>
+										<h4 class="card-title">Global Data Table</h4>
 										<div class="card-tools">
 											<button class="btn btn-icon btn-link btn-primary btn-xs"><span
 													class="fa fa-angle-down"></span></button>
@@ -937,129 +882,51 @@
 										</div>
 									</div>
 									<p class="card-category">
-										Map of the distribution of Infection around the world</p>
+										Prediction Algo : 3th-degree Polynomial-Reg Using Last 30days Data</p>
 								</div>
 								<div class="card-body">
 									<div class="row">
-										<div class="col-md-6">
+										<div class="col-md-12">
 											<div class="card">
 												<div class="card-body">
-													<div class="table-responsive">
+													<div style="overflow-x: scroll;" class="table-responsive">
 														<table id="list-datatables"
 															class="display table table-striped table-hover">
 															<thead>
 																<tr>
 																	<th>Country</th>
 																	<th>Cases</th>
+																	<th>Active Cases</th>
 																	<th>Deaths</th>
-																	<th>Recovery</th>
+																	<th>Recoveries</th>
+																	<th>5day Predict</th>
+																	<th>Err-Margin</th>
 																</tr>
 															</thead>
 															<tfoot>
 																<tr>
 																	<th>Country</th>
 																	<th>Cases</th>
+																	<th>Active Cases</th>
 																	<th>Deaths</th>
-																	<th>Recovery</th>
+																	<th>Recoveries</th>
+																	<th>5day Prediction</th>
+																	<th>Err-Margin</th>
 																</tr>
 															</tfoot>
-															<tbody>
-																<tr>
-																	<td>America</td>
-																	<td>34</td>
-																	<td>16</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Nigeria</td>
-																	<td>34</td>
-																	<td>16</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Lebanon</td>
-																	<td>34</td>
-																	<td>16</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Switzerland</td>
-																	<td>34</td>
-																	<td>16</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>1106</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>16</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>16</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>23</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>106</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>106</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>106</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>6</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>106</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>5</td>
-																	<td>61</td>
-																</tr>
-
+															<tbody id="full_table">
+																
 															</tbody>
 														</table>
 													</div>
 												</div>
 											</div>
 										</div>
-										<div class="col-md-6">
+										<!-- <div class="col-md-6">
 											<div class="mapcontainer">
 												<div style="height: 550px" id="map-example" class="vmap"></div>
 											</div>
-										</div>
+										</div> -->
 									</div>
 								</div>
 							</div>
@@ -1108,92 +975,8 @@
 																	<th>Recovery</th>
 																</tr>
 															</tfoot>
-															<tbody>
-																<tr>
-																	<td>America</td>
-																	<td>34</td>
-																	<td>16</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Nigeria</td>
-																	<td>34</td>
-																	<td>16</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Lebanon</td>
-																	<td>34</td>
-																	<td>16</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Switzerland</td>
-																	<td>34</td>
-																	<td>16</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>1106</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>16</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>16</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>23</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>106</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>106</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>106</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>6</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>106</td>
-																	<td>61</td>
-																</tr>
-																<tr>
-																	<td>Emirates</td>
-																	<td>34</td>
-																	<td>5</td>
-																	<td>61</td>
-																</tr>
-
+															<tbody id="nigeria_table">
+																
 															</tbody>
 														</table>
 													</div>
@@ -1953,20 +1736,20 @@
 														</g>
 													</svg>
 
-													<h4 class="card-title"><span id="hover_state">Akwa Ibom</span>
+													<h4 class="card-title"><span id="hover_state">Hover On Map To View</span>
 														State.</h4>
 													<div class="card-footer">
 														<div class="row user-stats text-center">
 															<div class="col">
-																<div class="number">125</div>
+																<div id="state_cases" class="number">-</div>
 																<div class="title">Cases</div>
 															</div>
 															<div class="col">
-																<div class="number">25K</div>
+																<div id="state_deaths" class="number">-</div>
 																<div class="title">Deaths</div>
 															</div>
 															<div class="col">
-																<div class="number">134</div>
+																<div id="state_recoveries" class="number">-</div>
 																<div class="title">Recoveries</div>
 															</div>
 														</div>
@@ -1987,13 +1770,13 @@
 					<nav class="pull-left">
 						<ul class="nav">
 							<li class="nav-item">
-								<a class="nav-link" href="https://www.themekita.com">
-									ThemeKita
+								<a class="nav-link" href="https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic">
+									Data Source : Wikipedia
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Help
+								<a class="nav-link" href="https://data.humdata.org/dataset/novel-coronavirus-2019-ncov-cases">
+									Data Source : HDX
 								</a>
 							</li>
 							<li class="nav-item">
@@ -2111,9 +1894,9 @@
 	<!-- Bootstrap Notify -->
 	<script src="../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
 
-	<!-- jQuery Vector Maps -->
+	<!-- jQuery Vector Maps
 	<script src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-	<script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+	<script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script> -->
 
 	<!-- Sweet Alert -->
 	<script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
@@ -2124,100 +1907,721 @@
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script src="../assets/js/setting-demo.js"></script>
 	<script src="../assets/js/demo.js"></script>
+
 	<script>
-		Circles.create({
+
+		var create_circles = ((c1, c2, c3)=>{
+			// console.log(c1, c2, c3);
+			Circles.create({
 			id: 'circles-1',
-			radius: 45,
-			value: 60,
+			radius: 60,
+			value: 100,
 			maxValue: 100,
-			width: 7,
-			text: 5,
-			colors: ['#f1f1f1', '#FF9E27'],
-			duration: 400,
+			width: 5,
+			text: round_number(c1),
+			colors: ['#ffa600'],
+			duration: 100,
 			wrpClass: 'circles-wrp',
 			textClass: 'circles-text',
 			styleWrapper: true,
 			styleText: true
-		})
+			})
+			// "#003f5c", "#bc5090", "#ffa600"
+			Circles.create({
+				id: 'circles-3',
+				radius: 60,
+				value: 100,
+				maxValue: 100,
+				width: 5,
+				text: round_number(c2),
+				colors: ['#bc5090'],
+				duration: 100,
+				wrpClass: 'circles-wrp',
+				textClass: 'circles-text',
+				styleWrapper: true,
+				styleText: true
+			})
 
-		Circles.create({
-			id: 'circles-3',
-			radius: 45,
-			value: 70,
-			maxValue: 100,
-			width: 7,
-			text: 36,
-			colors: ['#f1f1f1', '#2BB930'],
-			duration: 400,
-			wrpClass: 'circles-wrp',
-			textClass: 'circles-text',
+			Circles.create({
+				id: 'circles-2',
+				radius: 60,
+				value: 100,
+				maxValue: 100,
+				width: 5,
+				text: round_number(c3),
+				colors: ['#003f5c'],
+				duration: 100,
+				wrpClass: 'circles-wrp',
+				textClass: 'circles-text',
 			styleWrapper: true,
 			styleText: true
 		})
 
-		Circles.create({
-			id: 'circles-2',
-			radius: 45,
-			value: 40,
-			maxValue: 100,
-			width: 7,
-			text: 12,
-			colors: ['#f1f1f1', '#F25961'],
-			duration: 400,
-			wrpClass: 'circles-wrp',
-			textClass: 'circles-text',
-			styleWrapper: true,
-			styleText: true
+		});
+
+		const url = "http://localhost:8000/"
+
+		fetch(url+"get_global_readings") 
+
+		.then((resp) => resp.json()) // Transform the data into json
+		.then(function(data) {
+			// Create and append the li's to the ul
+
+			let c1 = data.response.content.readings.cases
+			let c2 = data.response.content.readings.recoveries
+			let c3 = data.response.content.readings.deaths
+
+			create_circles(c1, c2, c3);
+
+			})
+		.catch(()=> {
+			// This is where you run code if the server returns any errors
+		});
+
+		function round_number(number) {
+
+			str_number = number.toString()
+			
+			if (str_number.length <= 3){
+				return number
+			}
+			else if (str_number.length > 3 && str_number.length <= 6){
+
+				return `${(number/1000).toFixed(0)}K`;
+			}
+			else if (str_number.length > 6 && str_number.length <= 10){
+
+				return `${(number/1000000).toFixed(1)}M`;
+			}
+
+			return number
+		}
+
+		function range(start, end) {
+			return Array(end - start + 1).fill().map((_, idx) => start + idx)
+		}
+
+		fetch(url+"get_all_countries") 
+
+		.then((resp) => resp.json()) // Transform the data into json
+		.then(function(data) {
+
+			return  data.response.content.readings;
+
+			})
+		.then(function(country_values) {
+
+			create_country_change_event_listener(country_values);
+			
+
+			})
+		.then(function(data) {
+			// plot_analytics_data();
+		})
+		.catch(()=> {
+			
+		});
+
+
+		var create_country_change_event_listener = ((data)=>{
+
+			countries_select = document.getElementById("defaultSelect");
+
+			data.forEach((e)=>{
+				select_item = `<option data-cases = ${e.cases} data-name = ${e.name} data-deaths = ${e.deaths} data-recoveries = ${e.recoveries}>${(e.name).toUpperCase()}</option>`;
+				countries_select.innerHTML += select_item;
+
+			})
+
+			countries_select.addEventListener("change", (e)=>{
+
+				selected_country = countries_select[e.target.selectedIndex].dataset;
+
+				let c1 = selected_country.cases;
+				let c2 = selected_country.recoveries;
+				let c3 = selected_country.deaths;
+				let name = selected_country.name;
+
+				create_circles(c1, c2, c3);
+				fetch_moving_diff_data(name);
+
+				document.getElementById("set_country1").innerHTML = name;
+				document.getElementById("set_country2").innerHTML = name;
+			});
+
+			fill_plot_options_table(data);
+
+
 		})
 
-		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
+		var fetch_moving_diff_data = ((country = "Nigeria")=>{
 
-		var mytotalIncomeChart = new Chart(totalIncomeChart, {
-			type: 'bar',
-			data: {
-				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
-				datasets: [{
-					label: "Total Income",
-					backgroundColor: '#ff9e27',
-					borderColor: 'rgb(23, 125, 255)',
-					data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
-				}],
-			},
-			options: {
-				responsive: true,
-				maintainAspectRatio: false,
-				legend: {
-					display: false,
-				},
-				scales: {
-					yAxes: [{
-						ticks: {
-							display: false //this will remove only the label
-						},
-						gridLines: {
-							drawBorder: false,
-							display: false
-						}
+			fetch(url+`get_moving_difference/${country}`) 
+
+				.then((resp) => resp.json()) // Transform the data into json
+				.then(function(data) {
+
+					let last_14_days = data.response.content.readings.slice(-14, data.length);
+					create_moving_diff_bar(last_14_days);
+					fill_in_stats(last_14_days);
+
+					})
+				.catch((err)=> {
+					// This is where you run code if the server returns any errors
+					console.log(err);
+				});
+		})
+
+		fetch_moving_diff_data();
+
+		var create_moving_diff_bar = ((data)=>{
+
+			document.getElementById("chart-container").innerHTML = '&nbsp;';
+			document.getElementById("chart-container").innerHTML = '<canvas id="moving_diff_chart"></canvas>';
+			// var ctx = document.getElementById("myCanvas").getContext("2d");
+
+			
+			let moving_diff_chart = document.getElementById('moving_diff_chart').getContext('2d');
+
+			let mymoving_diff_chart = new Chart(moving_diff_chart, {
+				type: 'bar',
+				data: {
+					labels: range(1,data.length),
+					datasets: [{
+						label: "New-Cases",
+						backgroundColor: '#ffa600',
+						borderColor: 'rgb(23, 125, 255)',
+						data: data,
 					}],
-					xAxes: [{
-						gridLines: {
-							drawBorder: false,
-							display: false
-						}
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					legend: {
+						display: false,
+					},
+					scales: {
+						yAxes: [{
+							ticks: {
+								display: true //this will remove only the label
+							},
+							gridLines: {
+								drawBorder: false,
+								display: false
+							}
+						}],
+						xAxes: [{
+							ticks: {
+								display: false //this will remove only the label
+							},
+							gridLines: {
+								drawBorder: false,
+								display: false
+							}
+						}]
+					},
+				}
+			});
+
+		})		
+		
+
+		var fill_in_stats = ((list)=>{
+			var total = 0;
+			for(var i = 0; i < list.length; i++) {
+				total += list[i];
+			}
+			var avg = total / list.length;
+			document.getElementById("daily_average").innerHTML = isNaN(avg) ? 0 : avg.toFixed(1);
+			
+			let select_div = document.getElementById("defaultSelect");
+
+			let selected_country = select_div.selectedOptions[0].dataset;
+
+			let cases = selected_country.cases;
+			let recoveries = selected_country.recoveries;
+			let deaths = selected_country.deaths;
+
+			let death_rate = (deaths/cases)*100;
+			let recovery_rate = (recoveries/cases)*100;
+
+			document.getElementById("death_rate").innerHTML = isNaN(death_rate) ? 0 : death_rate.toFixed(1) ;
+			document.getElementById("recovery_rate").innerHTML = isNaN(recovery_rate) ? 0 : recovery_rate.toFixed(1);	
+
+		})
+
+
+		var fill_plot_options_table = ((data)=>{
+
+			let plot_options = document.getElementById("plot_options");
+			var full_table = document.getElementById("full_table");
+			
+			data.forEach(element => {
+
+				plot_options.innerHTML += `<tr>
+												<td colspan="2"><label class="container">
+														<input data-name = "${titleCase(element.name)}" type="checkbox">
+														<span data-name = "${titleCase(element.name)}" class="${titleCase(element.name)} checkmark"></span>
+													</label></td>
+												<td colspan="1">${titleCase(element.name)}</td>
+												<td colspan="2">${element.cases - (element.deaths + element.recoveries)}</td>
+											</tr>`;
+									
+				full_table.innerHTML += `
+										
+										<tr>
+											<td>${titleCase(element.name)}</td>
+											<td>${element.cases}</td>
+											<td>${element.cases - (element.deaths + element.recoveries)}</td>
+											<td>${element.deaths}</td>
+											<td>${element.recoveries}</td>
+											<td>${(element.predicted).toFixed(0)}</td>
+											<td>&plusmn; ${((1-element.accuracy)*100).toFixed(1)}%</td>
+										</tr>
+										`
+
+				
+			});
+
+			let plotable_countries = Array.from(document.getElementsByClassName("checkmark"));
+			var table =	$('#list-datatables').DataTable({
+					pageLength: 5
+				});
+			
+			plotable_countries.forEach(element => {
+				element.addEventListener("click", (e)=>{
+					
+					if (e.target.classList.contains("checked")){
+						
+						e.target.classList.remove("checked");
+						
+					}
+					else{
+
+						e.target.classList.add("checked");
+					}
+					plot_analytics_data();
+				})
+			});
+			
+		})
+
+		var analytics_config = {
+									"chart_type": "historic",						
+									"scale": "linear",						
+									"view": "cases"						
+								}
+
+		var fetch_analytics_data = ((countries)=>{
+
+			fetch(url+`fetch_data/${countries[0]}/${countries[1]}/${countries[2]}`) 
+
+			.then((resp) => resp.json()) // Transform the data into json
+			.then(function(data) {
+				// Create and append the li's to the ul
+
+				document.getElementById("chart-container-compare").innerHTML = '&nbsp;';
+				document.getElementById("chart-container-compare").innerHTML = '<canvas id="compare_chart"></canvas>';
+
+				return data;
+				})
+			.then(function(data) {
+				// Create and append the li's to the ul
+					console.log(data.response.content.readings);
+				if (data.response.content.readings.length == 1){
+
+					single_value_chart(data, analytics_config);
+
+				}
+				else if (data.response.content.readings.length > 1){
+					
+					dual_value_chart(data, analytics_config);
+
+				}
+
+				})
+			.catch((err)=> {
+				console.log(err);
+				// This is where you run code if the server returns any errors
+			});
+		})
+
+		var plot_analytics_data = ()=>{
+			let selected_countries = document.getElementsByClassName("checked");
+			let countries = Array.from(selected_countries).slice(-3, selected_countries.length);
+
+			let countries_to_plot = ["false", "false", "false"];
+
+			for (let index = 0; index < countries.length; index++) {
+				countries_to_plot[index] = countries[index].dataset.name;
+			}
+			
+			fetch_analytics_data(countries_to_plot);
+			// fetch_analytics_data(["Nigeria", "France", "false"]);
+		}
+
+		
+
+		add_analytics_config_eventlistener = (()=>{
+			let chart_types = Array.from(document.getElementsByClassName("chart_type"));
+			let chart_scale = Array.from(document.getElementsByClassName("chart_scale"));
+			let chart_view = Array.from(document.getElementsByClassName("chart_view"));
+
+			chart_types.concat(chart_scale).concat(chart_view).forEach((element)=>{
+				element.addEventListener("click", (e)=>{
+
+					if (e.target.dataset.type == "chart_type"){
+
+						analytics_config.chart_type = e.target.innerHTML.toLowerCase();
+
+					}
+					else if (e.target.dataset.type == "chart_scale"){
+
+						analytics_config.scale = e.target.innerHTML.toLowerCase();
+
+					}
+					else if (e.target.dataset.type == "chart_view"){
+
+						analytics_config.view = e.target.innerHTML.toLowerCase();
+
+					}
+					
+					plot_analytics_data();
+
+				});
+			});
+		});
+		add_analytics_config_eventlistener();
+
+		
+
+		//Chart
+		function single_value_chart(data, config) {
+			var ctx = document.getElementById('compare_chart').getContext('2d');
+
+			if (config.chart_type == "today"){
+
+				values = [data.response.content.readings[0].country.today.cases, data.response.content.readings[0].country.today.deaths, data.response.content.readings[0].country.today.recoveries]
+
+				var compare_chart = new Chart(ctx, {
+				type: 'bar',
+				data: {
+					labels: ["Cases", "Deaths", "Recoveries"],
+					datasets: [ {
+						data: values,
+						backgroundColor: ["#ffa600", "#003f5c", "#bc5090"]
 					}]
 				},
-			}
-		});
+				options : {
+					responsive: true, 
+					maintainAspectRatio: false,
+					legend: {
+						display: false
+					},
+					tooltips: {
+						bodySpacing: 4,
+						mode:"nearest",
+						intersect: 0,
+						position:"nearest",
+						xPadding:10,
+						yPadding:10,
+						caretPadding:10
+					},
+					layout:{
+						padding:{left:5,right:5,top:15,bottom:15}
+					} ,
+					scales: {
+						yAxes: [{
+							ticks: {
+								fontStyle: "500",
+								beginAtZero: false,
+								maxTicksLimit: 5,
+								padding: 10
+							},
+							gridLines: {
+								drawTicks: false,
+								display: false
+							}
+						}
+						],
+						xAxes: [{
+							gridLines: {
+								zeroLineColor: "transparent"
+							},
+							ticks: {
+								padding: 10,
+								fontStyle: "500"
+							}
+						}]
+					} 
+				}
+			});
+		}
+			else if (config.chart_type == "historic"){
 
-		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
-			type: 'line',
-			height: '70',
-			width: '100%',
-			lineWidth: '2',
-			lineColor: '#ffa534',
-			fillColor: 'rgba(255, 165, 52, .14)'
-		});
+				let labels = [];
+				let cases = [];
+				let deaths = [];
+				let recoveries = [];
+
+				data.response.content.readings[0].data.forEach(element => {
+					labels.push(element["date"]);
+					
+						cases.push(element["cases"]);
+						
+						deaths.push(element["deaths"]);
+
+						recoveries.push(element.recoveries);
+
+					
+				});
+
+				var compare_chart = new Chart(ctx, {
+				type: 'line',
+				data: {
+					labels: labels.slice(-40, labels.length),
+					datasets: [ {
+						label: "Cases",
+						borderColor: '#ffa600',
+						pointBackgroundColor: '#ffa600',
+						pointRadius: 0,
+						backgroundColor: '#ffa600',
+						legendColor: '#ffa600',
+						fill: false,
+						borderWidth: 2,
+						data: cases.slice(-40, cases.length)
+					},
+					{
+						label: "Deaths",
+						borderColor: '#003f5c',
+						pointBackgroundColor: '#003f5c',
+						pointRadius: 0,
+						backgroundColor: '#003f5c',
+						legendColor: '#003f5c',
+						fill: false,
+						borderWidth: 2,
+						data: deaths.slice(-40, deaths.length)
+					},
+					{
+						label: "Recoveries",
+						borderColor: '#bc5090',
+						pointBackgroundColor: '#bc5090',
+						pointRadius: 0,
+						backgroundColor: '#bc5090',
+						legendColor: '#bc5090',
+						fill: false,
+						borderWidth: 2,
+						data: recoveries.slice(-40, recoveries.length)
+					}]
+				},
+				options : {
+					responsive: true, 
+					maintainAspectRatio: false,
+					legend: {
+						display: true
+					},
+					tooltips: {
+						bodySpacing: 4,
+						mode:"nearest",
+						intersect: 0,
+						position:"nearest",
+						xPadding:10,
+						yPadding:10,
+						caretPadding:10
+					},
+					layout:{
+						padding:{left:5,right:5,top:15,bottom:15}
+					},
+					scales: {
+						yAxes: [{
+							ticks: {
+								fontStyle: "500",
+								beginAtZero: false,
+								maxTicksLimit: 5,
+								padding: 10
+							},
+							type: analytics_config.scale.toLocaleLowerCase(),
+							gridLines: {
+								drawTicks: false,
+								display: false
+							}
+						}],
+						xAxes: [{
+							gridLines: {
+								zeroLineColor: "transparent"
+							},
+							ticks: {
+								padding: 10,
+								fontStyle: "500"
+							}
+						}]
+					}  
+				}
+			});
+
+			}
+
+		};
+
+
+		//Chart
+		function dual_value_chart(data, config) {
+			var ctx = document.getElementById('compare_chart').getContext('2d');
+			let colours = ["#ffa600a3", "#003f5cbd", "#bc5090b3"];
+
+			if (config.chart_type == "today"){
+				console.log(data);
+
+				
+				var index = 0;
+
+				let values = []
+
+				data.response.content.readings.forEach((element)=>{
+
+					values.push({
+								label: element.country.name,
+								backgroundColor: colours[index],
+								data: [element.country.today.cases,element.country.today.deaths, element.country.today.recoveries]
+								});
+					index++;
+
+				})
+
+				var compare_chart = new Chart(ctx, {
+				type: 'bar',
+				data: {
+				labels: ["Cases", "Deaths", "Recoveries"],
+				datasets: values
+				},
+				options : {
+					responsive: true, 
+					maintainAspectRatio: false,
+					legend: {
+						display: true
+					},
+					tooltips: {
+						bodySpacing: 4,
+						mode:"nearest",
+						intersect: 0,
+						position:"nearest",
+						xPadding:10,
+						yPadding:10,
+						caretPadding:10
+					},
+					layout:{
+						padding:{left:5,right:5,top:15,bottom:15}
+					}  
+				}
+			});
+		}
+			
+			else if (config.chart_type == "historic"){
+				
+				let labels = [];
+				let cases = [];
+				let deaths = [];
+				let recoveries = [];
+				let datasets = []
+				let index = 0;
+				console.log(analytics_config);
+				data.response.content.readings.forEach((element)=>{
+
+					let item_data = [];
+					labels = [];
+
+					element.data.forEach((datapoint)=>{
+						labels.push(datapoint.date)
+						if (analytics_config.view == "cases"){
+							
+							item_data.push(datapoint.cases);
+						}
+						else if (analytics_config.view == "recov"){
+							
+							item_data.push(datapoint.recoveries);
+						}
+						else if (analytics_config.view == "deaths"){
+							
+							item_data.push(datapoint.deaths);
+						}
+					});
+
+					datasets.push(
+						{
+						label: element.country.name,
+						borderColor: colours[index],
+						pointBackgroundColor: colours[index],
+						pointRadius: 0,
+						backgroundColor: colours[index],
+						legendColor: colours[index],
+						fill: true,
+						borderWidth: 2,
+						data: item_data.slice(-40, item_data.length)
+					}
+					)
+					index++;
+				})
+				console.log(datasets);
+
+				var compare_chart = new Chart(ctx, {
+				type: 'line',
+				data: {
+					labels: labels.slice(-40, labels.length),
+					datasets: datasets
+				},
+				options : {
+					responsive: true, 
+					maintainAspectRatio: false,
+					legend: {
+						display: true
+					},
+					tooltips: {
+						bodySpacing: 4,
+						mode:"nearest",
+						intersect: 0,
+						position:"nearest",
+						xPadding:10,
+						yPadding:10,
+						caretPadding:10
+					},
+					layout:{
+						padding:{left:5,right:5,top:15,bottom:15}
+					},
+					scales: {
+						yAxes: [{
+							ticks: {
+								fontStyle: "500",
+								beginAtZero: false,
+								maxTicksLimit: 5,
+								padding: 10
+							},
+							type: analytics_config.scale.toLocaleLowerCase(),
+							gridLines: {
+								drawTicks: false,
+								display: false
+							}
+						}],
+						xAxes: [{
+							gridLines: {
+								zeroLineColor: "transparent"
+							},
+							ticks: {
+								padding: 10,
+								fontStyle: "500"
+							}
+						}]
+					}  
+				}
+			});
+
+			}
+
+		}
+		fetch_analytics_data(["Albania", "Afghanistan", "Nigeria"]);
+
+
 	</script>
+
 
 	<script>
 		$(document).ready(function () {
@@ -2229,28 +2633,91 @@
 			});
 		});
 
-		$(document).ready(function () {
-			$('#list-datatables').DataTable({
-				pageLength: 5
-			});
-		});
+		// $(document).ready(function () {
+		// 	$('#list-datatables').DataTable({
+		// 		pageLength: 5
+		// 	});
+		// });
 
-		$(document).ready(function () {
-			$('#nigeria-datatables').DataTable({
-				pageLength: 5
-			});
-		});
+		
 	</script>
 	<script>
+		var states_data = [];
+
+		var fetch_country_states = ((country)=>{
+
+				fetch(url+`get_states_data/${country}`) 
+
+				.then((resp) => resp.json()) // Transform the data into json
+				.then(function(data) {
+
+					states_data = data.response.content.readings;
+					fill_states_table(states_data);
+					return  data.response.content.readings;
+
+				})
+				.then(function(state_values) {
+					
+					$('#nigeria-datatables').DataTable({
+						pageLength: 5
+					});
+				})
+				.catch((err)=> {
+					console.log(err);
+				});
+
+			});
+
+			$(document).ready(function () {
+				
+				fetch_country_states("Nigeria");
+
+			});
+
+		var fill_states_table = ((data)=>{
+			let tbody = document.getElementById("nigeria_table");
+			let index = 0;
+			let max_cases = Math.max.apply(Math, data.map(function(state_cases) { return state_cases.cases; }))
+
+			data.forEach((state)=>{
+				tbody.innerHTML += `
+									<tr>
+										<td>${state.state_name}</td>
+										<td>${state.cases}</td>
+										<td>${state.recoveries}</td>
+										<td>${state.deaths}</td>
+									</tr>
+															`;
+				try {
+					let path = document.querySelectorAll(`[data-title=${state.state_name.toLowerCase()}]`)[0];
+					console.log(path);
+					path.style.fill = `rgb(223, ${233-((state.cases/max_cases)*223)},${233-((state.cases/max_cases)*223)}`;
+				} catch (error) {
+					console.log(error);
+				}
+				
+
+			});
+		});
+		
+		var filter_hovered_state_data = ((hovered_state)=>{
+
+			let selected = states_data.filter((state)=>{
+								return hovered_state.toLowerCase() == state.state_name.toLowerCase();
+																			
+							});
+			return selected;
+		});
 
 		function titleCase(string) {
 			var sentence = string.toLowerCase().split("%%");
 			for (var i = 0; i < sentence.length; i++) {
 				sentence[i] = sentence[i][0].toUpperCase() + sentence[i].slice(1);
 			}
-			document.write(sentence.join("%%"));
+			// document.write(sentence.join("%%"));
 			return sentence;
 		}
+
 		const states = document.getElementsByClassName("st0");
 		const hover_state = document.getElementById("hover_state");
 
@@ -2258,19 +2725,33 @@
 
 		states_array.forEach(element => {
 
-			console.log(element.getAttribute("data-title"));
 			let state = titleCase(element.getAttribute("data-title"));
 
 			element.addEventListener("mouseover", (e) => {
-				e.target.style.fill = "red";
+				e.target.style.transform = "scale(1.02)";
 				hover_state.innerText = state;
+				
+				selected_state_data = filter_hovered_state_data(state[0]);
+
+				if (selected_state_data.length != 0){
+					document.getElementById("state_cases").innerHTML = selected_state_data[0].cases;
+					document.getElementById("state_recoveries").innerHTML = selected_state_data[0].recoveries;
+					document.getElementById("state_deaths").innerHTML = selected_state_data[0].deaths;
+				}
+				else{
+					document.getElementById("state_cases").innerHTML = 0;
+					document.getElementById("state_recoveries").innerHTML = 0;
+					document.getElementById("state_deaths").innerHTML = 0;
+				};
+
+
 			})
 			element.addEventListener("mouseout", (e) => {
-				e.target.style.fill = "rgb(223, 223, 223)";
+				e.target.style.transform = "scale(1)";
 			})
 
 		});
-		console.log(states);
+		
 	</script>
 </body>
 
