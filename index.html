@@ -9,6 +9,16 @@
 
 	<!-- Fonts and icons -->
 	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
+	<!-- CSS Files -->
+	<!-- <link rel="stylesheet" href="../assets/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/atlantis.min.css">
+	<script
+		src="https://code.jquery.com/jquery-3.5.0.slim.min.js"
+		integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs="
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<script>
 		WebFont.load({
 			google: { "families": ["Lato:300,400,700,900"] },
@@ -18,10 +28,6 @@
 			}
 		});
 	</script>
-
-	<!-- CSS Files -->
-	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../assets/css/atlantis.min.css">
 
 	<style>
 		/* The container */
@@ -90,6 +96,24 @@
 			-webkit-transform: rotate(45deg);
 			-ms-transform: rotate(45deg);
 			transform: rotate(45deg);
+		}
+
+		.selectgroup-button {
+			display: block;
+			border: 1px solid rgba(0,40,100,.12);
+			text-align: center;
+			padding: .375rem 1rem;
+			position: relative;
+			cursor: pointer;
+			border-radius: 3px;
+			color: #9aa0ac;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			font-size: 12px !important;
+			line-height: 1.5rem;
+			min-width: 2.375rem;
 		}
 	</style>
 
@@ -382,8 +406,8 @@
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									By. Insight Physics
-									<span class="user-level">08031346306</span>
+									Dashboard
+									<span class="user-level">Main Data View</span>
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -420,6 +444,11 @@
 							<div class="collapse" id="dashboard">
 								<ul class="nav nav-collapse">
 									<li>
+										<a href="https://insightphysics.co">
+											<span class="sub-item">InsightPhysics Home</span>
+										</a>
+									</li>
+									<li>
 										<a href="https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic">
 											<span class="sub-item">Wik - Global DataSource</span>
 										</a>
@@ -439,11 +468,7 @@
 											<span class="sub-item">ina Energy Dashboard</span>
 										</a>
 									</li>
-									<li>
-										<a href="https://insightphysics.co">
-											<span class="sub-item">InsightPhysics Home</span>
-										</a>
-									</li>
+									
 								</ul>
 							</div>
 						</li>
@@ -699,7 +724,8 @@
 					<div class="page-inner py-5">
 						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
 							<div>
-								<h2 class="text-white pb-2 fw-bold">NCOVID-19 PANDEMIC</h2>
+								<h2 id="loading_text" class="text-white pb-2 fw-bold">LOADING DATA, PLEASE WAIT...</h2>
+								<!-- <h2 id="loading_text" class="text-white pb-2 fw-bold">NCOVID-19 PANDEMIC</h2> -->
 								<h5 class="text-white op-7 mb-2">Global NCOVID-19 Pandemic Penetration Dashboard
 									(Monitoring Since January 2020)</h5>
 							</div>
@@ -741,7 +767,7 @@
 						<div class="col-md-6">
 							<div class="card full-height">
 								<div class="card-body">
-									<div class="card-title">14 day Statistics for <span id = "set_country2">Nigeria</span></div>
+									<div class="card-title">14 day Statistics for <span id = "set_country2">Global</span></div>
 									<div class="row py-3">
 										<div class="col-md-4 d-flex flex-column justify-content-around">
 											<div>
@@ -1780,15 +1806,15 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Licenses
+								<a class="nav-link" href="https://www.linkedin.com/in/kpongette-inyang/">
+									Contact
 								</a>
 							</li>
 						</ul>
 					</nav>
 					<div class="copyright ml-auto">
-						2018, made with <i class="fa fa-heart heart text-danger"></i> by <a
-							href="https://www.themekita.com">ThemeKita</a>
+						2020, made with <i class="fa fa-heart heart text-danger"></i> by <a
+							href="https://insightphysics.co">Insight Physics.</a>
 					</div>
 				</div>
 			</footer>
@@ -1905,8 +1931,8 @@
 	<script src="../assets/js/atlantis.min.js"></script>
 
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
-	<script src="../assets/js/setting-demo.js"></script>
-	<script src="../assets/js/demo.js"></script>
+	<!-- <script src="../assets/js/setting-demo.js"></script>
+	<script src="../assets/js/demo.js"></script> -->
 
 	<script>
 
@@ -1959,7 +1985,8 @@
 
 		});
 
-		const url = "http://localhost:8000/"
+		const url = "https://ncovid19.pythonanywhere.com/"
+		// const url = "http://localhost:8000/"
 
 		fetch(url+"get_global_readings") 
 
@@ -1985,9 +2012,13 @@
 			if (str_number.length <= 3){
 				return number
 			}
+			else if (str_number.length > 3 && str_number.length <= 5){
+
+				return `${(number/1000).toFixed(1)}K`;
+			}
 			else if (str_number.length > 3 && str_number.length <= 6){
 
-				return `${(number/1000).toFixed(0)}K`;
+			return `${(number/1000).toFixed(0)}K`;
 			}
 			else if (str_number.length > 6 && str_number.length <= 10){
 
@@ -2028,7 +2059,7 @@
 			countries_select = document.getElementById("defaultSelect");
 
 			data.forEach((e)=>{
-				select_item = `<option data-cases = ${e.cases} data-name = ${e.name} data-deaths = ${e.deaths} data-recoveries = ${e.recoveries}>${(e.name).toUpperCase()}</option>`;
+				select_item = `<option id = ${(e.name).toLowerCase()} data-cases = ${e.cases} data-name = ${e.name} data-deaths = ${e.deaths} data-recoveries = ${e.recoveries}>${(e.name).toUpperCase()}</option>`;
 				countries_select.innerHTML += select_item;
 
 			})
@@ -2050,11 +2081,12 @@
 			});
 
 			fill_plot_options_table(data);
+			fill_in_stats(false, true)
 
 
 		})
 
-		var fetch_moving_diff_data = ((country = "Nigeria")=>{
+		var fetch_moving_diff_data = ((country = "Global")=>{
 
 			fetch(url+`get_moving_difference/${country}`) 
 
@@ -2063,7 +2095,8 @@
 
 					let last_14_days = data.response.content.readings.slice(-14, data.length);
 					create_moving_diff_bar(last_14_days);
-					fill_in_stats(last_14_days);
+					let is_global_country = country == "Global" ? true : false;
+					fill_in_stats(last_14_days, is_global_country);
 
 					})
 				.catch((err)=> {
@@ -2080,13 +2113,15 @@
 			document.getElementById("chart-container").innerHTML = '<canvas id="moving_diff_chart"></canvas>';
 			// var ctx = document.getElementById("myCanvas").getContext("2d");
 
-			
+		    let dates = getDates()
 			let moving_diff_chart = document.getElementById('moving_diff_chart').getContext('2d');
+
+			let labels = data.length != 14 ? dates.slice(data.length - dates.length, dates.length-1) : dates.slice(0, dates.length-1);
 
 			let mymoving_diff_chart = new Chart(moving_diff_chart, {
 				type: 'bar',
 				data: {
-					labels: range(1,data.length),
+					labels: labels,
 					datasets: [{
 						label: "New-Cases",
 						backgroundColor: '#ffa600',
@@ -2103,7 +2138,7 @@
 					scales: {
 						yAxes: [{
 							ticks: {
-								display: true //this will remove only the label
+								display: false //this will remove only the label
 							},
 							gridLines: {
 								drawBorder: false,
@@ -2112,7 +2147,7 @@
 						}],
 						xAxes: [{
 							ticks: {
-								display: false //this will remove only the label
+								display: true //this will remove only the label
 							},
 							gridLines: {
 								drawBorder: false,
@@ -2123,20 +2158,67 @@
 				}
 			});
 
-		})		
+		})	
+		
+		Date.prototype.addDays = function(days) {
+			var dat = new Date(this.valueOf())
+			dat.setDate(dat.getDate() + days);
+			return dat;
+		};
+
+		function getDates(startDate = (new Date()).addDays(-14), stopDate = new Date()) { //GET DATE IN DD-MM FOR MOVING AVERAGE BARCHART
+			let month = Array();
+			month[0] = "Jan";
+			month[1] = "Feb";
+			month[2] = "Mar";
+			month[3] = "Apr";
+			month[4] = "May";
+			month[5] = "Jun";
+			month[6] = "Jul";
+			month[7] = "Aug";
+			month[8] = "Sept";
+			month[9] = "Oct";
+			month[10] = "Nov";
+			month[11] = "Dec";
+
+			var dateArray = new Array();
+			var currentDate = startDate;
+			while (currentDate <= stopDate) {
+				dateArray.push(`${currentDate.getDate()+1}-${month[currentDate.getMonth()]}`)
+				currentDate = currentDate.addDays(1);
+			}
+			return dateArray;
+		}
 		
 
-		var fill_in_stats = ((list)=>{
-			var total = 0;
-			for(var i = 0; i < list.length; i++) {
-				total += list[i];
-			}
-			var avg = total / list.length;
-			document.getElementById("daily_average").innerHTML = isNaN(avg) ? 0 : avg.toFixed(1);
+		var fill_in_stats = ((list, default_load = false)=>{
+
+			if (Boolean(list.length)){
+
+				var total = 0;
+
+				for(var i = 0; i < list.length; i++) {
+					total += list[i];
+				}
+
+				var avg = total / list.length;
+				
+				document.getElementById("daily_average").innerHTML = isNaN(avg) ? 0 : round_number(avg.toFixed(0));
+
+			};
 			
 			let select_div = document.getElementById("defaultSelect");
+			let selected_country = ""
 
-			let selected_country = select_div.selectedOptions[0].dataset;
+			if (default_load){
+
+				selected_country = document.getElementById("global").dataset;
+
+			}else{
+
+				selected_country = select_div.selectedOptions[0].dataset;
+
+			};
 
 			let cases = selected_country.cases;
 			let recoveries = selected_country.recoveries;
@@ -2175,7 +2257,7 @@
 											<td>${element.cases - (element.deaths + element.recoveries)}</td>
 											<td>${element.deaths}</td>
 											<td>${element.recoveries}</td>
-											<td>${(element.predicted).toFixed(0)}</td>
+											<td>${(element.predicted > element.cases) ? (element.predicted).toFixed(0) : '-'}</td>
 											<td>&plusmn; ${((1-element.accuracy)*100).toFixed(1)}%</td>
 										</tr>
 										`
@@ -2227,7 +2309,7 @@
 				})
 			.then(function(data) {
 				// Create and append the li's to the ul
-					console.log(data.response.content.readings);
+					// console.log(data.response.content.readings);
 				if (data.response.content.readings.length == 1){
 
 					single_value_chart(data, analytics_config);
@@ -2238,7 +2320,7 @@
 					dual_value_chart(data, analytics_config);
 
 				}
-
+				document.getElementById("loading_text").innerHTML = "NCOVID-19 PANDEMIC";
 				})
 			.catch((err)=> {
 				console.log(err);
@@ -2470,7 +2552,7 @@
 			let colours = ["#ffa600a3", "#003f5cbd", "#bc5090b3"];
 
 			if (config.chart_type == "today"){
-				console.log(data);
+				// console.log(data);
 
 				
 				var index = 0;
@@ -2524,7 +2606,7 @@
 				let recoveries = [];
 				let datasets = []
 				let index = 0;
-				console.log(analytics_config);
+				// console.log(analytics_config);
 				data.response.content.readings.forEach((element)=>{
 
 					let item_data = [];
@@ -2561,7 +2643,7 @@
 					)
 					index++;
 				})
-				console.log(datasets);
+				// console.log(datasets);
 
 				var compare_chart = new Chart(ctx, {
 				type: 'line',
@@ -2684,13 +2766,13 @@
 									<tr>
 										<td>${state.state_name}</td>
 										<td>${state.cases}</td>
-										<td>${state.recoveries}</td>
 										<td>${state.deaths}</td>
+										<td>${state.recoveries}</td>
 									</tr>
 															`;
 				try {
 					let path = document.querySelectorAll(`[data-title=${state.state_name.toLowerCase()}]`)[0];
-					console.log(path);
+					// console.log(path);
 					path.style.fill = `rgb(223, ${233-((state.cases/max_cases)*223)},${233-((state.cases/max_cases)*223)}`;
 				} catch (error) {
 					console.log(error);
