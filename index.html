@@ -1929,6 +1929,29 @@
 
 	<!-- Atlantis JS -->
 	<script src="../assets/js/atlantis.min.js"></script>
+	<script>
+		// const url = "http://localhost:8000/"
+		const url = "https://ncovid19.pythonanywhere.com/"
+		// If your site is on CloudFlare, then you can use '/cdn-cgi/trace' instead
+		$.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
+			var res = data.split("\n");
+			console.log(res)
+			let ip = res[2].split("=")[1]
+			let uag = res[5].split("=")[1]
+			console.log(ip,uag);
+			$.post(`${url}record_visit/`,
+				{
+					ip: `${ip}`,
+					user_agent: `${uag}`
+				},
+				function(data, status){
+					alert("Data: " + data + "\nStatus: " + status);
+				});
+
+		})
+		
+
+	</script>
 
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<!-- <script src="../assets/js/setting-demo.js"></script>
@@ -1985,7 +2008,7 @@
 
 		});
 
-		const url = "https://ncovid19.pythonanywhere.com/"
+		// const url = "https://ncovid19.pythonanywhere.com/"
 		// const url = "http://localhost:8000/"
 
 		fetch(url+"get_global_readings") 
@@ -2049,8 +2072,8 @@
 		.then(function(data) {
 			// plot_analytics_data();
 		})
-		.catch(()=> {
-			
+		.catch((err)=> {
+			console.log(err);
 		});
 
 
@@ -2138,7 +2161,7 @@
 					scales: {
 						yAxes: [{
 							ticks: {
-								display: false //this will remove only the label
+								display: true //this will remove only the label
 							},
 							gridLines: {
 								drawBorder: false,
@@ -2443,6 +2466,7 @@
 
 				let labels = [];
 				let cases = [];
+				let active = [];
 				let deaths = [];
 				let recoveries = [];
 
@@ -2450,6 +2474,8 @@
 					labels.push(element["date"]);
 					
 						cases.push(element["cases"]);
+
+						active.push(element["active_cases"]);
 						
 						deaths.push(element["deaths"]);
 
@@ -2472,6 +2498,17 @@
 						fill: false,
 						borderWidth: 2,
 						data: cases.slice(-40, cases.length)
+					},
+					{
+						label: "Active",
+						borderColor: '#8c3701',
+						pointBackgroundColor: '#8c3701',
+						pointRadius: 0,
+						backgroundColor: '#8c3701',
+						legendColor: '#8c3701',
+						fill: false,
+						borderWidth: 2,
+						data: active.slice(-40, deaths.length)
 					},
 					{
 						label: "Deaths",
